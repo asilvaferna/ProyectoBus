@@ -136,11 +136,6 @@
         <Component class="javax.swing.JLabel" name="jLabel13">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/Adri/Desktop/delante-del-autobus_318-33490.jpg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

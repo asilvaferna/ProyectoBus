@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
+import javax.swing.ButtonModel;
 
 /**
  *
@@ -606,10 +607,49 @@ public class InterfazTicketera extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
-        //Texto jLabels
+        //Selección Destino
         jlblSubTotal5.setText("Vigo");
         String destino = jComboBoxDestinos.getSelectedItem().toString();
         jlblSubTotal6.setText(destino);
+        
+        //Selección Número de billetes
+        String nBilletes = jTFCantidadBilletes.getText().toString();
+        jlblSubTotal4.setText(nBilletes);
+       
+        //Selección Tipo
+        String tipo;
+       if (jRBTipo1.isSelected()) {
+        tipo= jRBTipo1.getText().toString();
+        jlblSubTotal2.setText(tipo);
+       } else {
+           tipo = jRBTipo2.getText().toString();
+       jlblSubTotal2.setText(tipo);}
+       
+       //Selección Clase
+       String clase;
+       if (jRBClase1.isSelected()){
+           clase = jRBClase1.getText().toString();
+           jlblSubTotal1.setText(clase);
+       }else {
+           clase = jRBClase2.getText().toString();
+           jlblSubTotal1.setText(clase);}
+       
+       
+       //Selección Edad
+       String edad;
+        if (jRBEdad1.isSelected()) {
+        edad= jRBTipo1.getText().toString();
+        jlblSubTotal3.setText(edad);
+       } else if (jRBEdad2.isSelected()){
+           edad = jRBEdad2.getText().toString();
+             jlblSubTotal3.setText(edad);
+       }
+       else{
+           edad = jRBEdad3.getText().toString();
+        jlblSubTotal3.setText(edad);}
+       
+       
+    
     }//GEN-LAST:event_jButtonTotalMouseClicked
 
     /**
