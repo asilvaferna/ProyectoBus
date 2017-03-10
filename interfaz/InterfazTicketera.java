@@ -8,6 +8,7 @@ package interfaz;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.Random;
 
 /**
@@ -583,14 +584,29 @@ public class InterfazTicketera extends javax.swing.JFrame {
         jlblSubTotal.setText(null);
         jlblImpuestos.setText(null);
         jlblTotal.setText(null);
-        
+        jRBTipo1.setSelected(true);
+        jRBClase1.setSelected(true);
+        jRBEdad1.setSelected(true);
+        jlblSubTotal1.setText(null);
+        jlblSubTotal2.setText(null);
+        jlblSubTotal3.setText(null);
+        jlblSubTotal4.setText(null);
+        jlblSubTotal5.setText(null);
+        jlblSubTotal6.setText(null);
+        jlblSubTotal7.setText(null);
+        jlblSubTotal8.setText(null);
+        jlblSubTotal9.setText(null);
+        jlblSubTotal.setText(null);
+        jlblImpuestos.setText(null);
+        jlblTotal.setText(null);
     }//GEN-LAST:event_jButtonResetActionPerformed
 
     private void jButtonTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalActionPerformed
         Calendar timer = Calendar.getInstance();
         timer.getTime();
-        SimpleDateFormat tTime = new SimpleDateFormat("hh:mm:ss");
+        SimpleDateFormat tTime = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
         jlblSubTotal9.setText(tTime.format(timer.getTime()));
+        
     }//GEN-LAST:event_jButtonTotalActionPerformed
 
     private void jTFCantidadBilletesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTFCantidadBilletesMouseClicked
