@@ -406,10 +406,10 @@ public class InterfazTicketera extends javax.swing.JFrame {
 
         jLabel18.setText("Numero Ticket");
 
+        jlblSubTotal7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal7.setToolTipText("");
         jlblSubTotal7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
-        jlblSubTotal8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal8.setToolTipText("");
         jlblSubTotal8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -651,7 +651,7 @@ public class InterfazTicketera extends javax.swing.JFrame {
        //Selección Edad
        String edad;
         if (jRBEdad1.isSelected()) {
-        edad= jRBTipo1.getText().toString();
+        edad= jRBEdad1.getText().toString();
         jlblSubTotal3.setText(edad);
        } else if (jRBEdad2.isSelected()){
            edad = jRBEdad2.getText().toString();
