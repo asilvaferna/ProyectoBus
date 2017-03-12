@@ -6,6 +6,7 @@
 package interfaz;
 
 import java.awt.Color;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Random;
@@ -101,8 +102,6 @@ public class InterfazTicketera extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("PT Sans", 0, 48)); // NOI18N
         jLabel1.setText("Sistema Reserva Bus");
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("/Users/Adri/Desktop/delante-del-autobus_318-33490.jpg")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -142,11 +141,14 @@ public class InterfazTicketera extends javax.swing.JFrame {
         jLabel8.setLabelFor(jlblTotal);
         jLabel8.setText("Total");
 
+        jlblSubTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal.setToolTipText("");
         jlblSubTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
+        jlblImpuestos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblImpuestos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
+        jlblTotal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jButtonTotal.setText("Total");
@@ -203,7 +205,7 @@ public class InterfazTicketera extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
                     .addComponent(jlblSubTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jlblImpuestos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
@@ -274,6 +276,7 @@ public class InterfazTicketera extends javax.swing.JFrame {
         jLabel12.setLabelFor(jTFCantidadBilletes);
         jLabel12.setText("Numero de Billetes");
 
+        jTFCantidadBilletes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTFCantidadBilletes.setText("Ej: 1");
         jTFCantidadBilletes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -367,31 +370,37 @@ public class InterfazTicketera extends javax.swing.JFrame {
 
         jLabel9.setText("Clase");
 
+        jlblSubTotal1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal1.setToolTipText("");
         jlblSubTotal1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel11.setText("Tipo");
 
+        jlblSubTotal2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal2.setToolTipText("");
         jlblSubTotal2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel14.setText("Edad");
 
+        jlblSubTotal3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal3.setToolTipText("");
         jlblSubTotal3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel15.setText("Nº Billetes");
 
+        jlblSubTotal4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal4.setToolTipText("");
         jlblSubTotal4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel16.setText("Origen");
 
+        jlblSubTotal5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal5.setToolTipText("");
         jlblSubTotal5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel17.setText("Destino");
 
+        jlblSubTotal6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal6.setToolTipText("");
         jlblSubTotal6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -400,6 +409,7 @@ public class InterfazTicketera extends javax.swing.JFrame {
         jlblSubTotal7.setToolTipText("");
         jlblSubTotal7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
+        jlblSubTotal8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal8.setToolTipText("");
         jlblSubTotal8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -407,6 +417,7 @@ public class InterfazTicketera extends javax.swing.JFrame {
 
         jLabel20.setText("Hora/Fecha");
 
+        jlblSubTotal9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlblSubTotal9.setToolTipText("");
         jlblSubTotal9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -590,7 +601,7 @@ public class InterfazTicketera extends javax.swing.JFrame {
     private void jButtonTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalActionPerformed
         Calendar timer = Calendar.getInstance();
         timer.getTime();
-        SimpleDateFormat tTime = new SimpleDateFormat("hh:mm:ss");
+        SimpleDateFormat tTime = new SimpleDateFormat("hh:mm:ss dd/MM/yyy");
         jlblSubTotal9.setText(tTime.format(timer.getTime()));
     }//GEN-LAST:event_jButtonTotalActionPerformed
 
@@ -607,6 +618,8 @@ public class InterfazTicketera extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
+        
+
         //Selección Destino
         jlblSubTotal5.setText("Vigo");
         String destino = jComboBoxDestinos.getSelectedItem().toString();
@@ -647,9 +660,26 @@ public class InterfazTicketera extends javax.swing.JFrame {
        else{
            edad = jRBEdad3.getText().toString();
         jlblSubTotal3.setText(edad);}
-       
-       
-    
+        
+        //Definimos los decimales a mostrar
+          DecimalFormat dosDecimales = new DecimalFormat("0.00"); 
+          
+          
+        //SubTotal 
+        float operacion;
+        operacion =Float.parseFloat(nBilletes);
+        jlblSubTotal.setText(dosDecimales.format(operacion)+" €");
+        
+        //Impuestos
+        float impuestos;
+        impuestos = operacion*0.1f;
+        jlblImpuestos.setText(impuestos+" €");  
+        //Total
+        float total;
+        total = impuestos+operacion;
+        jlblTotal.setText(dosDecimales.format(total) + " €");
+        
+        
     }//GEN-LAST:event_jButtonTotalMouseClicked
 
     /**
@@ -679,10 +709,11 @@ public class InterfazTicketera extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+       
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new InterfazTicketera().setVisible(true);
+    
         });
     }
 
