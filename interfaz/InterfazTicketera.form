@@ -136,11 +136,6 @@
         <Component class="javax.swing.JLabel" name="jLabel13">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/Adri/Desktop/delante-del-autobus_318-33490.jpg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -193,7 +188,7 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <Component id="jlblSubTotal" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jlblImpuestos" min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -241,6 +236,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -251,6 +247,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblImpuestos">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="3"/>
@@ -260,6 +257,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblTotal">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="3"/>
@@ -501,6 +499,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTFCantidadBilletes">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Ej: 1"/>
           </Properties>
           <Events>
@@ -688,6 +687,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal1">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -703,6 +703,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal2">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -718,6 +719,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal3">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -733,6 +735,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal4">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -748,6 +751,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal5">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -763,6 +767,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal6">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -778,6 +783,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal7">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -808,6 +814,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jlblSubTotal9">
           <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
