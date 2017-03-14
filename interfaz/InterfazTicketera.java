@@ -12,6 +12,7 @@ import java.util.Calendar;
 import java.util.Locale;
 import java.util.Random;
 import javax.swing.ButtonModel;
+import operaciones.Importe;
 
 /**
  *
@@ -562,8 +563,9 @@ public class InterfazTicketera extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -681,19 +683,17 @@ public class InterfazTicketera extends javax.swing.JFrame {
         //Definimos los decimales a mostrar
           DecimalFormat dosDecimales = new DecimalFormat("0.00"); 
           
-          
+        Importe i1 = new Importe();
         //SubTotal 
-        float operacion;
-        operacion =Float.parseFloat(nBilletes);
-        jlblSubTotal.setText(dosDecimales.format(operacion)+" €");
-        
+        if(jRBEdad1.isSelected()){
+            
+        }
         //Impuestos
-        float impuestos;
-        impuestos = operacion*0.1f;
+        float impuestos = i1.getImpuestos();
         jlblImpuestos.setText(impuestos+" €");  
         //Total
         float total;
-        total = impuestos+operacion;
+        total = impuestos;
         jlblTotal.setText(dosDecimales.format(total) + " €");
         
         
