@@ -621,7 +621,7 @@ public class InterfazTicketera extends javax.swing.JFrame {
 
         SimpleDateFormat tTime = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
         jlblSubTotal9.setText(tTime.format(timer.getTime()));
-        
+
     }//GEN-LAST:event_jButtonTotalActionPerformed
 
     private void jTFCantidadBilletesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTFCantidadBilletesMouseClicked
@@ -629,110 +629,74 @@ public class InterfazTicketera extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFCantidadBilletesMouseClicked
 
     private void jRBClase1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBClase1MouseClicked
-        
+
     }//GEN-LAST:event_jRBClase1MouseClicked
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-        
+
     }//GEN-LAST:event_jButtonSalirActionPerformed
 
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
-        
+        Importe importe = new Importe();
 
         //Selección Destino
         jlblSubTotal5.setText("Vigo");
         String destino = jComboBoxDestinos.getSelectedItem().toString();
         jlblSubTotal6.setText(destino);
-        
+
         //Selección Número de billetes
-        String nBilletes = jTFCantidadBilletes.getText().toString();
-        jlblSubTotal4.setText(nBilletes);
-       
+        Integer nBilletes = Integer.parseInt(jTFCantidadBilletes.getText());
+        jlblSubTotal4.setText(Integer.toString(nBilletes));
+
         //Selección Tipo
         String tipo;
-       if (jRBTipo1.isSelected()) {
-        tipo= jRBTipo1.getText().toString();
-        jlblSubTotal2.setText(tipo);
-       } else {
-           tipo = jRBTipo2.getText().toString();
-       jlblSubTotal2.setText(tipo);}
-       
-       //Selección Clase
-       String clase;
-       if (jRBClase1.isSelected()){
-           clase = jRBClase1.getText().toString();
-           jlblSubTotal1.setText(clase);
-       }else {
-           clase = jRBClase2.getText().toString();
-           jlblSubTotal1.setText(clase);}
-       
-       
-       //Selección Edad
-       String edad;
+        if (jRBTipo1.isSelected()) {
+            tipo = jRBTipo1.getText();
+            jlblSubTotal2.setText(tipo);
+        } else {
+            tipo = jRBTipo2.getText();
+            jlblSubTotal2.setText(tipo);
+        }
+
+        //Selección Clase
+        String clase;
+        if (jRBClase1.isSelected()) {
+            clase = jRBClase1.getText();
+            jlblSubTotal1.setText(clase);
+        } else {
+            clase = jRBClase2.getText();
+            jlblSubTotal1.setText(clase);
+        }
+
+        //Selección Edad
+        String edad;
         if (jRBEdad1.isSelected()) {
-        edad= jRBEdad1.getText().toString();
-        jlblSubTotal3.setText(edad);
-       } else if (jRBEdad2.isSelected()){
-           edad = jRBEdad2.getText().toString();
-             jlblSubTotal3.setText(edad);
-       }
-       else{
-           edad = jRBEdad3.getText().toString();
-        jlblSubTotal3.setText(edad);}
-        
+            edad = jRBEdad1.getText();
+            jlblSubTotal3.setText(edad);
+        } else if (jRBEdad2.isSelected()) {
+            edad = jRBEdad2.getText();
+            jlblSubTotal3.setText(edad);
+        } else {
+            edad = jRBEdad3.getText();
+            jlblSubTotal3.setText(edad);
+        }
+
         //Definimos los decimales a mostrar
-          DecimalFormat dosDecimales = new DecimalFormat("0.00"); 
-          
+        DecimalFormat dosDecimales = new DecimalFormat("0.00");
+
         Importe i1 = new Importe();
         //SubTotal 
-        if(jRBEdad1.isSelected()){
-            
-        }
+        jlblSubTotal.setText(dosDecimales.format(nBilletes * importe.precioBilleteAII(destino, clase, edad, tipo)) + "€");
+
         //Impuestos
-        float impuestos = i1.getImpuestos();
-        jlblImpuestos.setText(impuestos+" €");  
+        jlblImpuestos.setText(importe.getImpuestos() + " €");
         //Total
-        float total;
-        total = impuestos;
-        jlblTotal.setText(dosDecimales.format(total) + " €");
-        
-        
+
+        jlblTotal.setText(dosDecimales.format(nBilletes * importe.precioBilleteDII(destino, clase, edad, tipo)) + " €");
+
+
     }//GEN-LAST:event_jButtonTotalMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazTicketera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazTicketera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazTicketera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazTicketera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-       
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new InterfazTicketera().setVisible(true);
-    
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;

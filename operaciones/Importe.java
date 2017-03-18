@@ -26,7 +26,7 @@ public class Importe {
         return IMP;
     }
 
-    
+    //Cambiar
     public float kilometros(String nombreCiudad){
         if (nombreCiudad.equals("Lugo")){
             return 120f;
@@ -44,7 +44,7 @@ public class Importe {
     public float tipo(String tipoBillete){
         
         if (tipoBillete.equals("Ida")){
-            return 1;
+            return 0;
         } else {
             return 0.10f;
         }
@@ -56,36 +56,22 @@ public class Importe {
         } else if (tipoEdad.equals("Junior")){
             return 0.10f;
         } else {
-            return 1;
+            return 0;
         }
     }
     
-    public double precioBilleteAII(String nombreCiudad, String claseBillete, String tipoEdad, String tipoBillete){
-        if (claseBillete.equals("Normal") && tipoBillete.equals("Ida-Vuelta")){
-            return BST * tipo(tipoBillete);
-        } else if(claseBillete.equals("Normal") && tipoBillete.equals("Ida") && tipoEdad.equals("Adulto")){
-            return BST * tipo(tipoBillete) * edad(tipoEdad);
-        } else if(claseBillete.equals("Normal") && tipoBillete.equals("Ida") && tipoEdad.equals("Junior")){
-            return BST * tipo(tipoBillete) * edad(tipoEdad);
-        } else if(claseBillete.equals("Normal") && tipoBillete.equals("Ida") && tipoEdad.equals("Senior")){
-            return BST * tipo(tipoBillete) * edad(tipoEdad);
-        } else if(claseBillete.equals("Premium") && tipoBillete.equals("Ida-Vuelta")){
-            return BPREM * tipo(tipoBillete);
-        } else if(claseBillete.equals("Premium") && tipoBillete.equals("Ida") && tipoEdad.equals("Senior")){
-            return BPREM * tipo(tipoBillete) * edad(tipoEdad);
-        } else if(claseBillete.equals("Premium") && tipoBillete.equals("Ida") && tipoEdad.equals("Adulto")){
-            return BPREM * tipo(tipoBillete) * edad(tipoEdad);
+    public double precioBilleteAII(String nombreCiudad, String claseBillete, String tipoEdad, String tipoBillete){        
+        if (claseBillete.equals("Normal")) {
+            return (BST + PPKM * kilometros(nombreCiudad)) / (1 + edad(tipoEdad)) / (1 + tipo(tipoBillete));
+            
         } else {
-            return BPREM * tipo(tipoBillete) * edad(tipoEdad);
-        } 
+            return (BPREM + PPKM * kilometros(nombreCiudad)) / (1 + edad(tipoEdad)) / (1 + tipo(tipoBillete));
+        }
     }
     
     public double precioBilleteDII(String nombreCiudad, String claseBillete, String tipoEdad, String tipoBillete){
-        return precioBilleteAII(nombreCiudad, claseBillete, tipoEdad, tipoBillete) * IMP + precioBilleteAII(nombreCiudad, claseBillete, tipoEdad, tipoBillete);
+        return  precioBilleteAII(nombreCiudad, claseBillete, tipoEdad, tipoBillete) * (1 + IMP);
     }
     
-    public double impuestos(String nombreCiudad, String claseBillete, String tipoEdad, String tipoBillete){
-        return IMP * precioBilleteAII(nombreCiudad, claseBillete, tipoEdad, tipoBillete);
-    }
     
 }

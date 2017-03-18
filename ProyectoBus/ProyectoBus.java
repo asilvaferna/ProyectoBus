@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyectobus;
+package ProyectoBus;
 import interfaz.InterfazTicketera;
 
 /**
@@ -19,6 +19,7 @@ public class ProyectoBus {
          java.awt.EventQueue.invokeLater(() -> {
             new InterfazTicketera().setVisible(true);
         });
+       
     }
     
 }
