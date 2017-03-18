@@ -5,6 +5,11 @@
  */
 package interfaz;
 import impresora.PrintPDF;
+import java.io.IOException;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 /**
  *
@@ -46,6 +51,8 @@ public class Ticket extends javax.swing.JFrame {
         jlblOrigenR = new javax.swing.JLabel();
         jlblDestinoR = new javax.swing.JLabel();
         jlblTicketR = new javax.swing.JLabel();
+        jlblPrecio = new javax.swing.JLabel();
+        jlblPrecioR = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButtonImprimir = new javax.swing.JButton();
         jButtonCerrar = new javax.swing.JButton();
@@ -94,43 +101,55 @@ public class Ticket extends javax.swing.JFrame {
 
         jlblTicketR.setText("jLabel1");
 
+        jlblPrecio.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblPrecio.setText("Precio: ");
+
+        jlblPrecioR.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlblClase)
-                    .addComponent(jlblAsiento)
-                    .addComponent(jlblTicket)
-                    .addComponent(jlblClaseR)
-                    .addComponent(jlblAsientoR)
-                    .addComponent(jlblTicketR))
-                .addGap(153, 153, 153)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jlblDestinoR)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jlblOrigenR)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblPrecioR)
+                            .addComponent(jlblPrecio))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlblTipo)
-                            .addComponent(jlblDestino)
-                            .addComponent(jlblOrigen)
-                            .addComponent(jlblTipoR))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                            .addComponent(jlblClase)
+                            .addComponent(jlblAsiento)
+                            .addComponent(jlblTicket)
+                            .addComponent(jlblClaseR)
+                            .addComponent(jlblAsientoR)
+                            .addComponent(jlblTicketR))
+                        .addGap(153, 153, 153)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlblEdad)
-                            .addComponent(jlblEdadR))
-                        .addGap(53, 53, 53))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jlblDestinoR)
+                                .addGap(128, 128, 128))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jlblOrigenR)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlblTipo)
+                                    .addComponent(jlblDestino)
+                                    .addComponent(jlblOrigen)
+                                    .addComponent(jlblTipoR))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlblEdad)
+                                    .addComponent(jlblEdadR))))
+                        .addGap(56, 56, 56))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(133, 133, 133)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblClase)
                     .addComponent(jlblTipo)
@@ -156,7 +175,11 @@ public class Ticket extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblDestinoR)
                     .addComponent(jlblTicketR))
-                .addGap(50, 50, 50))
+                .addGap(56, 56, 56)
+                .addComponent(jlblPrecio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jlblPrecioR)
+                .addGap(55, 55, 55))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ticket.png"))); // NOI18N
@@ -237,8 +260,149 @@ public class Ticket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCerrarMouseClicked
 
     private void jButtonImprimirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonImprimirMouseClicked
-        PrintPDF pdf = new PrintPDF();
-        pdf.imprimePagina();
+        String clase = jlblClase.getText();
+        String claseR = jlblClaseR.getText();
+        String tipo = jlblTipo.getText();
+        String tipoR = jlblTipoR.getText();
+        String edad = jlblEdad.getText();
+        String edadR = jlblEdadR.getText();
+        String asiento = jlblAsiento.getText();
+        String asientoR = jlblAsientoR.getText();
+        String origen = jlblOrigen.getText();
+        String origenR = jlblOrigenR.getText();
+        String ticket = jlblTicket.getText();
+        String ticketR = jlblTicketR.getText();
+        String destino = jlblDestino.getText();
+        String destinoR = jlblDestinoR.getText();
+        String precio = jlblPrecio.getText();
+        String precioR = jlblPrecioR.getText();
+        
+        try {
+            
+            
+            String fileName = "ticket.pdf";
+
+            PDDocument doc = new PDDocument();
+            PDPage page = new PDPage();
+
+            doc.addPage(page);
+
+            PDPageContentStream content = new PDPageContentStream(doc, page);
+
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 26);
+            content.newLineAtOffset(220, 750);
+            content.showText("Ticket");
+            content.endText();
+
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(50, 600);
+            content.showText(clase);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(250, 600);
+            content.showText(tipo);
+            content.endText();
+            
+
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(450, 600);
+            content.showText(edad);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(50, 550);
+            content.showText(claseR);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(250, 550);
+            content.showText(tipoR);
+            content.endText();
+            
+
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(450, 550);
+            content.showText(edadR);
+            content.endText();            
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(50, 450);
+            content.showText(asiento);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(250, 450);
+            content.showText(origen);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(250, 400);
+            content.showText(origenR);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(50, 400);
+            content.showText(asientoR);
+            content.endText();            
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(50, 300);
+            content.showText(ticket);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(250, 300);
+            content.showText(destino);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(250, 250);
+            content.showText(destinoR);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(50, 250);
+            content.showText(ticketR);
+            content.endText();  
+                        
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 16);
+            content.newLineAtOffset(50, 150);
+            content.showText(precio);
+            content.endText();
+            
+            content.beginText();
+            content.setFont(PDType1Font.HELVETICA, 13);
+            content.newLineAtOffset(50, 100);
+            content.showText(precioR);
+            content.endText();
+            content.close();
+            
+            doc.save(fileName);
+            doc.close();
+
+        } catch (IOException e) {
+
+            System.out.println(e.getMessage());
+
+        }
+    
     }//GEN-LAST:event_jButtonImprimirMouseClicked
 
 
@@ -258,6 +422,8 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel jlblEdadR;
     private javax.swing.JLabel jlblOrigen;
     private javax.swing.JLabel jlblOrigenR;
+    private javax.swing.JLabel jlblPrecio;
+    private javax.swing.JLabel jlblPrecioR;
     private javax.swing.JLabel jlblTicket;
     private javax.swing.JLabel jlblTicketR;
     private javax.swing.JLabel jlblTipo;

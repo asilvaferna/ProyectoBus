@@ -20,7 +20,7 @@ public class PrintPDF {
 
     public void imprimePagina() {
         try {
-            Ticket ticket = new Ticket();
+            
             
             String fileName = "ticket.pdf";
 
