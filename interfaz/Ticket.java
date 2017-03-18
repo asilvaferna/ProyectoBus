@@ -285,7 +285,7 @@ public class Ticket extends javax.swing.JFrame {
             
             
             String fileName = "ticket.pdf";
-            String imageName = "/Users/Adri/NetBeansProjects/ProyectoBus/src/Images/ticket.png";
+            String imageName = "/Users/Adri/NetBeansProjects/ProyectoBus/src/Images/bus_ticket.png";
 
             BufferedImage awtImage = ImageIO.read(new File(imageName));
             
@@ -300,104 +300,109 @@ public class Ticket extends javax.swing.JFrame {
             PDImageXObject img = LosslessFactory.createFromImage(doc, awtImage);
 
             
-            content.drawImage(img, 250, 650, awtImage.getWidth(), awtImage.getHeight());
+            content.drawImage(img, 70, 650, awtImage.getWidth(), awtImage.getHeight());
             
+            content.beginText();
+            content.setFont(PDType1Font.COURIER_BOLD, 32);
+            content.newLineAtOffset(300, 710);
+            content.showText("Vigo Bus Ticket");
+            content.endText();
             
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(50, 600);
             content.showText(clase);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(250, 600);
             content.showText(tipo);
             content.endText();
             
 
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(450, 600);
             content.showText(edad);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(50, 550);
             content.showText(claseR);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(250, 550);
             content.showText(tipoR);
             content.endText();
             
 
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(450, 550);
             content.showText(edadR);
             content.endText();            
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(50, 450);
             content.showText(asiento);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(250, 450);
             content.showText(origen);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(250, 400);
             content.showText(origenR);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(50, 400);
             content.showText(asientoR);
             content.endText();            
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(50, 300);
             content.showText(ticket);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(250, 300);
             content.showText(destino);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(250, 250);
             content.showText(destinoR);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(50, 250);
             content.showText(ticketR);
             content.endText();  
                         
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 16);
+            content.setFont(PDType1Font.COURIER, 16);
             content.newLineAtOffset(50, 150);
             content.showText(precio);
             content.endText();
             
             content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 13);
+            content.setFont(PDType1Font.COURIER, 13);
             content.newLineAtOffset(50, 100);
             content.showText(precioR);
             content.endText();
