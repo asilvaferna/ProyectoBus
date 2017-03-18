@@ -17,15 +17,42 @@ public class Viaje {
     public String clase;
     public String tipo;
     public String edad;
-    public int nBilletes;
     public ArrayList<String> destinos = new ArrayList<String>(Arrays.asList("Pontevedra", "Lugo", "Ourense", "Santiago", "A Coruna", "Ferrol"));
 
-    public Viaje(String clase, String tipo, String edad, int nBilletes) {
+    public Viaje(String clase, String tipo, String edad) {
         this.clase = clase;
         this.tipo = tipo;
         this.edad = edad;
-        this.nBilletes = nBilletes;
     }
+
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getEdad() {
+        return edad;
+    }
+
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
+
+    public ArrayList<String> getDestinos() {
+        return destinos;
+    }
+
 
     
     
