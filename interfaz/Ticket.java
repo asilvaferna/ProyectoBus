@@ -4,16 +4,8 @@
  * and open the template in the editor.
  */
 package interfaz;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory;
-import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+import impresora.PrintPDF;
 
 /**
  *
@@ -282,134 +274,33 @@ public class Ticket extends javax.swing.JFrame {
         String precioR = jlblPrecioR.getText();
         
         try {
+            PrintPDF impresora = new PrintPDF();
+            // Cabecera
+            impresora.imprimeTexto("Vigo Bus Ticket", 300, 710, 32, "negrita");
+            impresora.imprimeImagen(70, 650);
+            // Cuerpo: titulos
+            impresora.imprimeTexto(clase, 50, 600, 16, "normal");
+            impresora.imprimeTexto(tipo, 250, 600, 16, "normal");
+            impresora.imprimeTexto(edad, 450, 600, 16, "normal");
+            impresora.imprimeTexto(asiento, 50, 450, 16, "normal");
+            impresora.imprimeTexto(origen, 250, 450, 16, "normal");
+            impresora.imprimeTexto(ticket, 50, 300, 16, "normal");
+            impresora.imprimeTexto(destino, 250, 300, 16, "normal");
+            impresora.imprimeTexto(precio, 50, 150, 16, "normal");
+            // Cuerpo: resultados
+            impresora.imprimeTexto(claseR, 50, 550, 13, "normal");
+            impresora.imprimeTexto(tipoR, 250, 550, 13, "normal");
+            impresora.imprimeTexto(edadR, 450, 550, 13, "normal");
+            impresora.imprimeTexto(origenR, 250, 400, 13, "normal");
+            impresora.imprimeTexto(asientoR, 50, 400, 13, "normal");
+            impresora.imprimeTexto(destinoR, 250, 250, 13, "normal");
+            impresora.imprimeTexto(ticketR, 50, 250, 13, "normal");
+            impresora.imprimeTexto(precioR, 50, 100, 13, "normal");
+            // Cerramos el stream
+            impresora.cerrarContenido();
             
-            
-            String fileName = "ticket.pdf";
-            String imageName = "/Users/Adri/NetBeansProjects/ProyectoBus/src/Images/bus_ticket.png";
-
-            BufferedImage awtImage = ImageIO.read(new File(imageName));
-            
-            PDDocument doc = new PDDocument();
-            PDPage page = new PDPage();
-
-            doc.addPage(page);
-
-            PDPageContentStream content = new PDPageContentStream(doc, page);
-            
-            
-            PDImageXObject img = LosslessFactory.createFromImage(doc, awtImage);
-
-            
-            content.drawImage(img, 70, 650, awtImage.getWidth(), awtImage.getHeight());
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER_BOLD, 32);
-            content.newLineAtOffset(300, 710);
-            content.showText("Vigo Bus Ticket");
-            content.endText();
-            
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(50, 600);
-            content.showText(clase);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(250, 600);
-            content.showText(tipo);
-            content.endText();
-            
-
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(450, 600);
-            content.showText(edad);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(50, 550);
-            content.showText(claseR);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(250, 550);
-            content.showText(tipoR);
-            content.endText();
-            
-
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(450, 550);
-            content.showText(edadR);
-            content.endText();            
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(50, 450);
-            content.showText(asiento);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(250, 450);
-            content.showText(origen);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(250, 400);
-            content.showText(origenR);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(50, 400);
-            content.showText(asientoR);
-            content.endText();            
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(50, 300);
-            content.showText(ticket);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(250, 300);
-            content.showText(destino);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(250, 250);
-            content.showText(destinoR);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(50, 250);
-            content.showText(ticketR);
-            content.endText();  
-                        
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 16);
-            content.newLineAtOffset(50, 150);
-            content.showText(precio);
-            content.endText();
-            
-            content.beginText();
-            content.setFont(PDType1Font.COURIER, 13);
-            content.newLineAtOffset(50, 100);
-            content.showText(precioR);
-            content.endText();
-            content.close();
-            
-            doc.save(fileName);
-            doc.close();
+            impresora.guardarPDF();
+            impresora.cerrarPDF();
 
         } catch (IOException e) {
 

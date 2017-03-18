@@ -427,7 +427,7 @@ public class Ticketera extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRBClase1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRBClase1MouseClicked
-        
+
     }//GEN-LAST:event_jRBClase1MouseClicked
 
     private void jRBTipo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBTipo1ActionPerformed
@@ -437,8 +437,8 @@ public class Ticketera extends javax.swing.JFrame {
     private void jComboBoxDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDestinosActionPerformed
         totalizador();
     }//GEN-LAST:event_jComboBoxDestinosActionPerformed
-    private void totalizador(){
-                 Importe importe = new Importe();
+    private void totalizador() {
+        Importe importe = new Importe();
         //Selección Destino
 //        jlblSubTotal5.setText("Vigo");
         String destino = jComboBoxDestinos.getSelectedItem().toString();
@@ -497,7 +497,7 @@ public class Ticketera extends javax.swing.JFrame {
 
         // Abrir ventana de Ticket
         new Ticket().setVisible(true);
-        
+
 
     }//GEN-LAST:event_jButtonTotalMouseClicked
 
@@ -526,7 +526,7 @@ public class Ticketera extends javax.swing.JFrame {
     }//GEN-LAST:event_jRBEdad3ActionPerformed
 
     private void jComboBoxDestinosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxDestinosMouseClicked
-       
+
     }//GEN-LAST:event_jComboBoxDestinosMouseClicked
 
     private void jRBClase1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBClase1ActionPerformed
