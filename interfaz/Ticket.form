@@ -103,23 +103,25 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlblClase" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblAsiento" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblTicket" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblClaseR" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblAsientoR" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblTicketR" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblPrecioR" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblPrecio" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jlblPrecioR" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblPrecio" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblHoraFecha" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblHoraFechaR" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jlblClase" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblAsiento" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblTicket" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblClaseR" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblAsientoR" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblTicketR" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -184,9 +186,18 @@
                           <Component id="jlblTicketR" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                      <Component id="jlblPrecio" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jlblPrecioR" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jlblPrecio" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jlblPrecioR" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jlblHoraFecha" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jlblHoraFechaR" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -293,6 +304,19 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jlblPrecioR">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblHoraFecha">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Krungthep" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hora y Fecha:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblHoraFechaR">
               <Properties>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>

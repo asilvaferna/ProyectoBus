@@ -9,6 +9,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import operaciones.Importe;
+import ProyectoBus.Viaje;
 
 /**
  *
@@ -21,6 +22,49 @@ public class Ticketera extends javax.swing.JFrame {
      */
     public Ticketera() {
         initComponents();
+    }
+
+    public String getDestino() {
+        return jComboBoxDestinos.getSelectedItem().toString();
+    }
+
+    public int getBilletes() {
+        return Integer.parseInt(jComboBoxNBilletes.getSelectedItem().toString());
+    }
+
+    public String getTipo() {
+        if (jRBTipo1.isSelected()) {
+            return jRBTipo1.getText();
+        } else {
+            return jRBTipo2.getText();
+        }
+    }
+
+    public String getClase() {
+        if (jRBClase1.isSelected()) {
+            return jRBClase1.getText();
+
+        } else {
+            return jRBClase2.getText();
+        }
+    }
+
+    public String getEdad() {
+        if (jRBEdad1.isSelected()) {
+            return jRBEdad1.getText();
+        } else if (jRBEdad2.isSelected()) {
+            return jRBEdad2.getText();
+        } else {
+            return jRBEdad3.getText();
+        }
+    }
+
+    public String getTiempo() {
+        Calendar timer = Calendar.getInstance();
+        timer.getTime();
+
+        SimpleDateFormat tTime = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+        return tTime.format(timer.getTime());
     }
 
     /**
@@ -439,74 +483,31 @@ public class Ticketera extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxDestinosActionPerformed
     private void totalizador() {
         Importe importe = new Importe();
-        //Selección Destino
-//        jlblSubTotal5.setText("Vigo");
-        String destino = jComboBoxDestinos.getSelectedItem().toString();
-//        jlblSubTotal6.setText(destino);
 
-        //Selección Número de billetes
-        Integer nBilletes = Integer.parseInt(jComboBoxNBilletes.getSelectedItem().toString());
-//        jlblSubTotal4.setText(Integer.toString(nBilletes));
-
-        //Selección Tipo
-        String tipo;
-        if (jRBTipo1.isSelected()) {
-            tipo = jRBTipo1.getText();
-//            jlblSubTotal2.setText(tipo);
-        } else {
-            tipo = jRBTipo2.getText();
-//            jlblSubTotal2.setText(tipo);
-        }
-
-        //Selección Clase
-        String clase;
-        if (jRBClase1.isSelected()) {
-            clase = jRBClase1.getText();
-//            jlblSubTotal1.setText(clase);
-        } else {
-            clase = jRBClase2.getText();
-//            jlblSubTotal1.setText(clase);
-        }
-
-        //Selección Edad
-        String edad;
-        if (jRBEdad1.isSelected()) {
-            edad = jRBEdad1.getText();
-//            jlblSubTotal3.setText(edad);
-        } else if (jRBEdad2.isSelected()) {
-            edad = jRBEdad2.getText();
-//            jlblSubTotal3.setText(edad);
-        } else {
-            edad = jRBEdad3.getText();
-//            jlblSubTotal3.setText(edad);
-        }
         //Definimos los decimales a mostrar
         DecimalFormat dosDecimales = new DecimalFormat("0.00");
 
-        Importe i1 = new Importe();
         //SubTotal
-        jlblSubTotalR.setText(dosDecimales.format(nBilletes * importe.precioBilleteAII(destino, clase, edad, tipo)) + "€");
+        jlblSubTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteAII(getDestino(), getClase(), getEdad(), getTipo())) + "€");
 
         //Impuestos
         jlblImpuestosR.setText(importe.getImpuestos() + " €");
 
         //Total
-        jlblTotalR.setText(dosDecimales.format(nBilletes * importe.precioBilleteDII(destino, clase, edad, tipo)) + " €");
+        jlblTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
     }
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
-
         // Abrir ventana de Ticket
-        new Ticket().setVisible(true);
+        for (int i = 0; i < getBilletes(); i++) {
+            Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), "", getDestino(), jlblTotalR.getText(), getTiempo());
+            ticket.setVisible(true);
+        }
 
 
     }//GEN-LAST:event_jButtonTotalMouseClicked
 
     private void jButtonTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTotalActionPerformed
-        Calendar timer = Calendar.getInstance();
-        timer.getTime();
 
-        SimpleDateFormat tTime = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
-//        jlblSubTotal9.setText(tTime.format(timer.getTime()));
     }//GEN-LAST:event_jButtonTotalActionPerformed
 
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed

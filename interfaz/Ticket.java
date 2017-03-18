@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package interfaz;
+
 import java.io.IOException;
 import impresora.PrintPDF;
 
@@ -20,6 +21,17 @@ public class Ticket extends javax.swing.JFrame {
         initComponents();
     }
     
+    public Ticket(String clase, String tipo, String edad, String asiento, String destino, String precio, String hora){
+        initComponents();
+        jlblClaseR.setText(clase);
+        jlblTipoR.setText(tipo);
+        jlblEdadR.setText(edad);
+        jlblAsientoR.setText(asiento);
+        jlblOrigenR.setText("Vigo");
+        jlblDestinoR.setText(destino);
+        jlblPrecioR.setText(precio);
+        jlblHoraFechaR.setText(hora);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,6 +61,8 @@ public class Ticket extends javax.swing.JFrame {
         jlblTicketR = new javax.swing.JLabel();
         jlblPrecio = new javax.swing.JLabel();
         jlblPrecioR = new javax.swing.JLabel();
+        jlblHoraFecha = new javax.swing.JLabel();
+        jlblHoraFechaR = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButtonImprimir = new javax.swing.JButton();
         jButtonCerrar = new javax.swing.JButton();
@@ -102,6 +116,11 @@ public class Ticket extends javax.swing.JFrame {
 
         jlblPrecioR.setText("jLabel1");
 
+        jlblHoraFecha.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblHoraFecha.setText("Hora y Fecha:");
+
+        jlblHoraFechaR.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -109,27 +128,23 @@ public class Ticket extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlblClase)
+                    .addComponent(jlblAsiento)
+                    .addComponent(jlblTicket)
+                    .addComponent(jlblClaseR)
+                    .addComponent(jlblAsientoR)
+                    .addComponent(jlblTicketR)
+                    .addComponent(jlblPrecioR)
+                    .addComponent(jlblPrecio))
+                .addGap(153, 153, 153)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlblPrecioR)
-                            .addComponent(jlblPrecio))
+                            .addComponent(jlblHoraFecha)
+                            .addComponent(jlblHoraFechaR))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlblClase)
-                            .addComponent(jlblAsiento)
-                            .addComponent(jlblTicket)
-                            .addComponent(jlblClaseR)
-                            .addComponent(jlblAsientoR)
-                            .addComponent(jlblTicketR))
-                        .addGap(153, 153, 153)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jlblDestinoR)
-                                .addGap(128, 128, 128))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jlblOrigenR)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jlblTipo)
@@ -139,7 +154,12 @@ public class Ticket extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jlblEdad)
-                                    .addComponent(jlblEdadR))))
+                                    .addComponent(jlblEdadR)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlblDestinoR)
+                                    .addComponent(jlblOrigenR))
+                                .addGap(128, 128, 128)))
                         .addGap(56, 56, 56))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -172,9 +192,15 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(jlblDestinoR)
                     .addComponent(jlblTicketR))
                 .addGap(56, 56, 56)
-                .addComponent(jlblPrecio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jlblPrecioR)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jlblPrecio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jlblPrecioR))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jlblHoraFecha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jlblHoraFechaR)))
                 .addGap(55, 55, 55))
         );
 
@@ -252,7 +278,7 @@ public class Ticket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCerrarActionPerformed
 
     private void jButtonCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarMouseClicked
-       setVisible(false);
+        setVisible(false);
     }//GEN-LAST:event_jButtonCerrarMouseClicked
 
     private void jButtonImprimirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonImprimirMouseClicked
@@ -272,7 +298,9 @@ public class Ticket extends javax.swing.JFrame {
         String destinoR = jlblDestinoR.getText();
         String precio = jlblPrecio.getText();
         String precioR = jlblPrecioR.getText();
-        
+        String hora = jlblHoraFecha.getText();
+        String horaR = jlblHoraFechaR.getText();
+
         try {
             PrintPDF impresora = new PrintPDF();
             // Cabecera
@@ -287,6 +315,7 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto(ticket, 50, 300, 16, "normal");
             impresora.imprimeTexto(destino, 250, 300, 16, "normal");
             impresora.imprimeTexto(precio, 50, 150, 16, "normal");
+            impresora.imprimeTexto(hora, 250, 150, 16, "normal");
             // Cuerpo: resultados
             impresora.imprimeTexto(claseR, 50, 550, 13, "normal");
             impresora.imprimeTexto(tipoR, 250, 550, 13, "normal");
@@ -296,9 +325,10 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto(destinoR, 250, 250, 13, "normal");
             impresora.imprimeTexto(ticketR, 50, 250, 13, "normal");
             impresora.imprimeTexto(precioR, 50, 100, 13, "normal");
+            impresora.imprimeTexto(horaR, 250, 100, 13, "normal");
             // Cerramos el stream
             impresora.cerrarContenido();
-            
+
             impresora.guardarPDF();
             impresora.cerrarPDF();
 
@@ -307,7 +337,7 @@ public class Ticket extends javax.swing.JFrame {
             System.out.println(e.getMessage());
 
         }
-    System.out.println("your file created in : " + System.getProperty("user.dir"));
+        System.out.println("Fichero creado en: " + System.getProperty("user.dir"));
     }//GEN-LAST:event_jButtonImprimirMouseClicked
 
 
@@ -325,6 +355,8 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel jlblDestinoR;
     private javax.swing.JLabel jlblEdad;
     private javax.swing.JLabel jlblEdadR;
+    private javax.swing.JLabel jlblHoraFecha;
+    private javax.swing.JLabel jlblHoraFechaR;
     private javax.swing.JLabel jlblOrigen;
     private javax.swing.JLabel jlblOrigenR;
     private javax.swing.JLabel jlblPrecio;
