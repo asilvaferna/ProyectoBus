@@ -4,12 +4,16 @@
  * and open the template in the editor.
  */
 package interfaz;
-import impresora.PrintPDF;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+import javax.imageio.ImageIO;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 
 /**
  *
@@ -281,20 +285,25 @@ public class Ticket extends javax.swing.JFrame {
             
             
             String fileName = "ticket.pdf";
+            String imageName = "/Users/Adri/NetBeansProjects/ProyectoBus/src/Images/ticket.png";
 
+            BufferedImage awtImage = ImageIO.read(new File(imageName));
+            
             PDDocument doc = new PDDocument();
             PDPage page = new PDPage();
 
             doc.addPage(page);
 
             PDPageContentStream content = new PDPageContentStream(doc, page);
+            
+            
+            PDImageXObject img = LosslessFactory.createFromImage(doc, awtImage);
 
-            content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 26);
-            content.newLineAtOffset(220, 750);
-            content.showText("Ticket");
-            content.endText();
-
+            
+            content.drawImage(img, 250, 650, awtImage.getWidth(), awtImage.getHeight());
+            
+            
+            
             content.beginText();
             content.setFont(PDType1Font.HELVETICA, 16);
             content.newLineAtOffset(50, 600);
@@ -402,7 +411,7 @@ public class Ticket extends javax.swing.JFrame {
             System.out.println(e.getMessage());
 
         }
-    
+    System.out.println("your file created in : " + System.getProperty("user.dir"));
     }//GEN-LAST:event_jButtonImprimirMouseClicked
 
 

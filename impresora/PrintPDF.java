@@ -10,7 +10,15 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
+import org.apache.pdfbox.pdmodel.graphics.image.LosslessFactory;
+
+
 import interfaz.Ticket;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -23,19 +31,22 @@ public class PrintPDF {
             
             
             String fileName = "ticket.pdf";
+            String imageName = "/Users/Adri/NetBeansProjects/ProyectoBus/src/Images/ticket.png";
 
+            BufferedImage awtImage = ImageIO.read(new File(imageName));
+            
             PDDocument doc = new PDDocument();
             PDPage page = new PDPage();
 
             doc.addPage(page);
 
             PDPageContentStream content = new PDPageContentStream(doc, page);
-
-            content.beginText();
-            content.setFont(PDType1Font.HELVETICA, 26);
-            content.newLineAtOffset(220, 750);
-            content.showText("Ticket");
-            content.endText();
+            
+            
+            PDImageXObject img = LosslessFactory.createFromImage(doc, awtImage);
+                    
+            content.drawImage(img, 200, 30, awtImage.getWidth(), awtImage.getHeight());
+            content.close();
 
             content.beginText();
             content.setFont(PDType1Font.HELVETICA, 16);
