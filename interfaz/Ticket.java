@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package interfaz;
+import impresora.PrintPDF;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Ticket extends javax.swing.JFrame {
     public Ticket() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,11 +29,29 @@ public class Ticket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jlblTipo3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jlblClase = new javax.swing.JLabel();
+        jlblTipo = new javax.swing.JLabel();
+        jlblEdad = new javax.swing.JLabel();
+        jlblAsiento = new javax.swing.JLabel();
+        jlblTicket = new javax.swing.JLabel();
+        jlblOrigen = new javax.swing.JLabel();
+        jlblDestino = new javax.swing.JLabel();
+        jlblClaseR = new javax.swing.JLabel();
+        jlblTipoR = new javax.swing.JLabel();
+        jlblEdadR = new javax.swing.JLabel();
+        jlblAsientoR = new javax.swing.JLabel();
+        jlblOrigenR = new javax.swing.JLabel();
+        jlblDestinoR = new javax.swing.JLabel();
+        jlblTicketR = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonImprimir = new javax.swing.JButton();
+        jButtonCerrar = new javax.swing.JButton();
+
+        jlblTipo3.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblTipo3.setText("Nº Ticket:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,32 +59,126 @@ public class Ticket extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        jlblClase.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblClase.setText("Clase:");
+
+        jlblTipo.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblTipo.setText("Tipo:");
+
+        jlblEdad.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblEdad.setText("Edad:");
+
+        jlblAsiento.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblAsiento.setText("Asiento:");
+
+        jlblTicket.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblTicket.setText("Nº Ticket:");
+
+        jlblOrigen.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblOrigen.setText("Origen:");
+
+        jlblDestino.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblDestino.setText("Destino:");
+
+        jlblClaseR.setText("jLabel1");
+
+        jlblTipoR.setText("jLabel1");
+
+        jlblEdadR.setText("jLabel1");
+
+        jlblAsientoR.setText("jLabel1");
+
+        jlblOrigenR.setText("jLabel1");
+
+        jlblDestinoR.setText("jLabel1");
+
+        jlblTicketR.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 475, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlblClase)
+                    .addComponent(jlblAsiento)
+                    .addComponent(jlblTicket)
+                    .addComponent(jlblClaseR)
+                    .addComponent(jlblAsientoR)
+                    .addComponent(jlblTicketR))
+                .addGap(153, 153, 153)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jlblDestinoR)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jlblOrigenR)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblTipo)
+                            .addComponent(jlblDestino)
+                            .addComponent(jlblOrigen)
+                            .addComponent(jlblTipoR))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblEdad)
+                            .addComponent(jlblEdadR))
+                        .addGap(53, 53, 53))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblClase)
+                    .addComponent(jlblTipo)
+                    .addComponent(jlblEdad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblClaseR)
+                    .addComponent(jlblTipoR)
+                    .addComponent(jlblEdadR))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblAsiento)
+                    .addComponent(jlblOrigen))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblAsientoR)
+                    .addComponent(jlblOrigenR))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblTicket)
+                    .addComponent(jlblDestino))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlblDestinoR)
+                    .addComponent(jlblTicketR))
+                .addGap(50, 50, 50))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ticket.png"))); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButton1.setText("Imprimir");
-
-        jButton2.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButton2.setText("Salir");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonImprimir.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jButtonImprimir.setText("Imprimir");
+        jButtonImprimir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jButtonImprimirMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+
+        jButtonCerrar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jButtonCerrar.setText("Cerrar");
+        jButtonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonCerrarMouseClicked(evt);
+            }
+        });
+        jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonCerrarActionPerformed(evt);
             }
         });
 
@@ -82,9 +196,9 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonImprimir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)))
+                        .addComponent(jButtonCerrar)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -95,8 +209,8 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonImprimir)
+                    .addComponent(jButtonCerrar))
                 .addContainerGap())
         );
 
@@ -114,54 +228,40 @@ public class Ticket extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonCerrarActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jButtonCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarMouseClicked
        setVisible(false);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jButtonCerrarMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ticket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButtonImprimirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonImprimirMouseClicked
+        PrintPDF pdf = new PrintPDF();
+        pdf.imprimePagina();
+    }//GEN-LAST:event_jButtonImprimirMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Ticket().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonCerrar;
+    private javax.swing.JButton jButtonImprimir;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jlblAsiento;
+    private javax.swing.JLabel jlblAsientoR;
+    private javax.swing.JLabel jlblClase;
+    private javax.swing.JLabel jlblClaseR;
+    private javax.swing.JLabel jlblDestino;
+    private javax.swing.JLabel jlblDestinoR;
+    private javax.swing.JLabel jlblEdad;
+    private javax.swing.JLabel jlblEdadR;
+    private javax.swing.JLabel jlblOrigen;
+    private javax.swing.JLabel jlblOrigenR;
+    private javax.swing.JLabel jlblTicket;
+    private javax.swing.JLabel jlblTicketR;
+    private javax.swing.JLabel jlblTipo;
+    private javax.swing.JLabel jlblTipo3;
+    private javax.swing.JLabel jlblTipoR;
     // End of variables declaration//GEN-END:variables
 }
