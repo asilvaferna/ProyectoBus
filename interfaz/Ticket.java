@@ -7,6 +7,7 @@ package interfaz;
 
 import java.io.IOException;
 import impresora.PrintPDF;
+import ticket.Number;
 
 /**
  *
@@ -21,16 +22,21 @@ public class Ticket extends javax.swing.JFrame {
         initComponents();
     }
     
-    public Ticket(String clase, String tipo, String edad, String asiento, String destino, String precio, String hora){
+    public Ticket(String clase, String tipo, String edad, String destino, String precio, String hora){
         initComponents();
+        
+        Number n = new Number();
+        
         jlblClaseR.setText(clase);
         jlblTipoR.setText(tipo);
         jlblEdadR.setText(edad);
-        jlblAsientoR.setText(asiento);
+
         jlblOrigenR.setText("Vigo");
         jlblDestinoR.setText(destino);
         jlblPrecioR.setText(precio);
         jlblHoraFechaR.setText(hora);
+        jlblAsientoR.setText(String.valueOf(n.GenerarAsiento()));
+        jlblTicketR.setText(String.valueOf(n.GenerarTicket()));
     }
 
     /**

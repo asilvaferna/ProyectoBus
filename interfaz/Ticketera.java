@@ -499,11 +499,11 @@ public class Ticketera extends javax.swing.JFrame {
         jlblTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
     }
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
-        String totalUnitario = dosDecimales.format(importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo()))+" €";
+        String totalUnitario = String.valueOf(dosDecimales.format(importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo()))+" €");
         
 // Abrir ventana de Ticket
         for (int i = 0; i < getBilletes(); i++) {
-            Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), "", getDestino(), totalUnitario, getTiempo());
+            Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), getDestino(), totalUnitario, getTiempo());
             ticket.setVisible(true);
         }
 
