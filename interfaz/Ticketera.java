@@ -507,8 +507,6 @@ public class Ticketera extends javax.swing.JFrame {
     }
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
         totalizador();
-        // Abrir ventana de Ticket
-        //Cambiar
 
         String totalUnitario = String.valueOf(dosDecimales.format(importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
 

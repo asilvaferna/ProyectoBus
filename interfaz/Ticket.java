@@ -16,6 +16,7 @@ import ticket.Number;
 public class Ticket extends javax.swing.JFrame {
 
     String referencia;
+    PrintPDF impresora;
 
     /**
      * Creates new form Ticket
@@ -309,7 +310,7 @@ public class Ticket extends javax.swing.JFrame {
         String horaR = jlblHoraFechaR.getText();
 
         try {
-            PrintPDF impresora = new PrintPDF();
+            impresora = new PrintPDF();
             impresora.setNombreArchivo(referencia);
             // Cabecera
             impresora.imprimeTexto("Vigo Bus Ticket", 300, 710, 32, "negrita");
