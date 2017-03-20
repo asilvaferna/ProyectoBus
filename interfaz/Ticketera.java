@@ -484,14 +484,16 @@ public class Ticketera extends javax.swing.JFrame {
     private void jComboBoxDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDestinosActionPerformed
         totalizador();
     }//GEN-LAST:event_jComboBoxDestinosActionPerformed
-    private void totalizador() {
-        Importe importe = new Importe();
+            Importe importe = new Importe();
 
         //Definimos los decimales a mostrar
         DecimalFormat dosDecimales = new DecimalFormat("0.00");
+    
+    private void totalizador() {
+
 
         //SubTotal
-        jlblSubTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteAII(getDestino(), getClase(), getEdad(), getTipo())) + "€");
+        jlblSubTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteAII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
 
         //Impuestos
         jlblImpuestosR.setText(importe.getImpuestos() + " €");
@@ -500,10 +502,16 @@ public class Ticketera extends javax.swing.JFrame {
         jlblTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
     }
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
+
         // Abrir ventana de Ticket
         //Cambiar
+
+        String totalUnitario = String.valueOf(dosDecimales.format(importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo()))+" €");
+        
+// Abrir ventana de Ticket
+
         for (int i = 0; i < getBilletes(); i++) {
-            Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), "", getDestino(), jlblTotalR.getText(), getTiempo());
+            Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), getDestino(), totalUnitario, getTiempo());
             ticket.setVisible(true);
         }
 
