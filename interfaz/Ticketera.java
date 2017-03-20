@@ -5,17 +5,21 @@
  */
 package interfaz;
 
+import ProyectoBus.Viaje;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import operaciones.Importe;
-import ProyectoBus.Viaje;
+import java.util.ArrayList;
+import ticket.Number;
 
 /**
  *
  * @author Adri
  */
 public class Ticketera extends javax.swing.JFrame {
+
+    public ArrayList<Viaje> base = new ArrayList<>();
 
     /**
      * Creates new form Prueba
@@ -66,10 +70,11 @@ public class Ticketera extends javax.swing.JFrame {
         SimpleDateFormat tTime = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
         return tTime.format(timer.getTime());
     }
-    
-    public double setImporteTicket(double precio){
+
+    public double setImporteTicket(double precio) {
         return precio;
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -202,7 +207,7 @@ public class Ticketera extends javax.swing.JFrame {
         buttonGroup3.add(jRBEdad1);
         jRBEdad1.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jRBEdad1.setSelected(true);
-        jRBEdad1.setText("Senior");
+        jRBEdad1.setText("Adulto");
         jRBEdad1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRBEdad1ActionPerformed(evt);
@@ -211,7 +216,7 @@ public class Ticketera extends javax.swing.JFrame {
 
         buttonGroup3.add(jRBEdad2);
         jRBEdad2.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jRBEdad2.setText("Adulto");
+        jRBEdad2.setText("Senior");
         jRBEdad2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRBEdad2ActionPerformed(evt);
@@ -484,13 +489,12 @@ public class Ticketera extends javax.swing.JFrame {
     private void jComboBoxDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxDestinosActionPerformed
         totalizador();
     }//GEN-LAST:event_jComboBoxDestinosActionPerformed
-            Importe importe = new Importe();
+    Importe importe = new Importe();
 
-        //Definimos los decimales a mostrar
-        DecimalFormat dosDecimales = new DecimalFormat("0.00");
-    
+    //Definimos los decimales a mostrar
+    DecimalFormat dosDecimales = new DecimalFormat("0.00");
+
     private void totalizador() {
-
 
         //SubTotal
         jlblSubTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteAII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
@@ -502,17 +506,18 @@ public class Ticketera extends javax.swing.JFrame {
         jlblTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
     }
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
-
+        totalizador();
         // Abrir ventana de Ticket
         //Cambiar
 
-        String totalUnitario = String.valueOf(dosDecimales.format(importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo()))+" €");
-        
-// Abrir ventana de Ticket
+        String totalUnitario = String.valueOf(dosDecimales.format(importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
 
+        // Abrir ventana de Ticket
         for (int i = 0; i < getBilletes(); i++) {
             Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), getDestino(), totalUnitario, getTiempo());
+            Viaje viaje = new Viaje(ticket.referencia, getClase(), getTipo(), getEdad(), getDestino());
             ticket.setVisible(true);
+            base.add(viaje);
         }
 
 

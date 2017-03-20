@@ -7,7 +7,7 @@ package interfaz;
 
 import java.io.IOException;
 import impresora.PrintPDF;
-//import ticket.Number;
+import ticket.Number;
 
 /**
  *
@@ -15,28 +15,29 @@ import impresora.PrintPDF;
  */
 public class Ticket extends javax.swing.JFrame {
 
+    String referencia;
+
     /**
      * Creates new form Ticket
      */
     public Ticket() {
         initComponents();
     }
-    
-    public Ticket(String clase, String tipo, String edad, String destino, String precio, String hora){
+
+    public Ticket(String clase, String tipo, String edad, String destino, String precio, String hora) {
         initComponents();
-        
-        //Number n = new Number();
-        
+
+        referencia = Number.id_Alf_Num();
+
         jlblClaseR.setText(clase);
         jlblTipoR.setText(tipo);
         jlblEdadR.setText(edad);
-
         jlblOrigenR.setText("Vigo");
         jlblDestinoR.setText(destino);
         jlblPrecioR.setText(precio);
         jlblHoraFechaR.setText(hora);
-        jlblAsientoR.setText(String.valueOf(n.GenerarAsiento()));
-        jlblTicketR.setText(String.valueOf(n.GenerarTicket()));
+        jlblAsientoR.setText(String.valueOf(Number.GenerarAsiento()));
+        jlblTicketR.setText(String.valueOf(Number.GenerarTicket()));
     }
 
     /**
@@ -309,6 +310,7 @@ public class Ticket extends javax.swing.JFrame {
 
         try {
             PrintPDF impresora = new PrintPDF();
+            impresora.setNombreArchivo(referencia);
             // Cabecera
             impresora.imprimeTexto("Vigo Bus Ticket", 300, 710, 32, "negrita");
             impresora.imprimeImagen(70, 650);

@@ -5,24 +5,24 @@
  */
 package ProyectoBus;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  *
  * @author Adri
  */
 public class Viaje {
-    
+
+    public String id;
     public String clase;
     public String tipo;
     public String edad;
-    public ArrayList<String> destinos = new ArrayList<String>(Arrays.asList("Pontevedra", "Lugo", "Ourense", "Santiago", "A Coruna", "Ferrol"));
+    public String destino;
 
-    public Viaje(String clase, String tipo, String edad) {
+    public Viaje(String id, String clase, String tipo, String edad, String destino) {
+        this.id = id;
         this.clase = clase;
         this.tipo = tipo;
         this.edad = edad;
+        this.destino = destino;
     }
 
     public String getClase() {
@@ -49,13 +49,4 @@ public class Viaje {
         this.edad = edad;
     }
 
-    public ArrayList<String> getDestinos() {
-        return destinos;
-    }
-
-
-    
-    
-    
-    
 }

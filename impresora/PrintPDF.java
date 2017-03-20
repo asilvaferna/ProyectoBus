@@ -31,7 +31,6 @@ public class PrintPDF {
     PDPageContentStream contenido;
 
     public PrintPDF() throws IOException {
-        this.nombreArchivo = "ticket.pdf";
         this.nombreImagen = "/Users/Adri/NetBeansProjects/ProyectoBus/src/Images/bus_ticket.png";
         this.doc = new PDDocument();
         this.page = new PDPage();
@@ -49,7 +48,7 @@ public class PrintPDF {
     }
 
     public void setNombreArchivo(String nombreArchivo) {
-        this.nombreArchivo = nombreArchivo;
+        this.nombreArchivo = nombreArchivo + ".pdf";
     }
 
     public void setNombreImagen(String nombreImagen) {
@@ -78,8 +77,8 @@ public class PrintPDF {
         contenido.drawImage(img, alto, ancho, awtImage.getWidth(), awtImage.getHeight());
 
     }
-    
-    public void cerrarContenido() throws IOException{
+
+    public void cerrarContenido() throws IOException {
         contenido.close();
     }
 
