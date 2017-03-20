@@ -66,7 +66,10 @@ public class Ticketera extends javax.swing.JFrame {
         SimpleDateFormat tTime = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
         return tTime.format(timer.getTime());
     }
-
+    
+    public double setImporteTicket(double precio){
+        return precio;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -498,6 +501,7 @@ public class Ticketera extends javax.swing.JFrame {
     }
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
         // Abrir ventana de Ticket
+        //Cambiar
         for (int i = 0; i < getBilletes(); i++) {
             Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), "", getDestino(), jlblTotalR.getText(), getTiempo());
             ticket.setVisible(true);
