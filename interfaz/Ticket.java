@@ -7,7 +7,7 @@ package interfaz;
 
 import java.io.IOException;
 import impresora.PrintPDF;
-import ticket.Number;
+//import ticket.Number;
 
 /**
  *
@@ -25,7 +25,7 @@ public class Ticket extends javax.swing.JFrame {
     public Ticket(String clase, String tipo, String edad, String destino, String precio, String hora){
         initComponents();
         
-        Number n = new Number();
+        //Number n = new Number();
         
         jlblClaseR.setText(clase);
         jlblTipoR.setText(tipo);
