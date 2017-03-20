@@ -6,7 +6,7 @@
 package operaciones;
 
 /**
- *
+ * @author Pablo
  * @author Adri
  */
 public class Importe {

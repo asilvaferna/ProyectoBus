@@ -6,7 +6,7 @@
 package ProyectoBus;
 
 /**
- *
+ * @author Pablo
  * @author Adri
  */
 public class Viaje {

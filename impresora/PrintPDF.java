@@ -18,7 +18,7 @@ import java.io.File;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * @author Pablo
  * @author Adri
  */
 public class PrintPDF {

@@ -10,7 +10,7 @@ import impresora.PrintPDF;
 import ticket.Number;
 
 /**
- *
+ * @author Pablo
  * @author Adri
  */
 public class Ticket extends javax.swing.JFrame {

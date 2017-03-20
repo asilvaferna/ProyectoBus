@@ -11,10 +11,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import operaciones.Importe;
 import java.util.ArrayList;
-import ticket.Number;
 
 /**
- *
+ * @authorr Pablo
  * @author Adri
  */
 public class Ticketera extends javax.swing.JFrame {
