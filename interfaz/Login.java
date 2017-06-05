@@ -205,7 +205,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addComponent(jlblTitulo)))
                 .addGap(18, 18, 18)
-                .addComponent(jPanelBackground2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelBackground2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBEntrar)
@@ -238,6 +238,22 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jBRegistrarseActionPerformed
 
+    public static void main(String[] args){
+        java.awt.EventQueue.invokeLater(()->{
+            new Login().setVisible(true);
+        });
+        
+        objetos.Cliente cliente = new objetos.Cliente();
+        cliente.setNombre("Adrian");
+        cliente.setPass("prueba");
+        cliente.setUserid(123456);
+        cliente.setUsername("AdriSilva");
+        
+        bd.OperacionesBD base = new bd.OperacionesBD();
+        //base.insertUser(cliente);
+        
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
