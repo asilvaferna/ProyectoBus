@@ -241,14 +241,12 @@ public class Registro extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground1Layout.createSequentialGroup()
-                                .addComponent(jlAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jlAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jBConfirmar))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanelBackground2, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jPanelBackground2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanelBackground1Layout.setVerticalGroup(
@@ -286,10 +284,18 @@ public class Registro extends javax.swing.JFrame {
 
 
     private void jBConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConfirmarActionPerformed
-        this.setVisible(false);
+
+        try{
         OperacionesBD operaciones = new OperacionesBD();
         operaciones.insertUser(usuarioNuevo());
-        new Login().setVisible(true);
+                this.setVisible(false);
+                        new Login().setVisible(true);
+        }catch(Exception ex){
+              jlAlerta.setText("Todos los campos deben ser rellenados.");
+        }
+        
+        
+
     }//GEN-LAST:event_jBConfirmarActionPerformed
 
     private void jTDNIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTDNIKeyReleased
