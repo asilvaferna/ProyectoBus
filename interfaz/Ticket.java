@@ -290,6 +290,9 @@ public class Ticket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCerrarMouseClicked
 
     private void jButtonConfirmarVIajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmarVIajeMouseClicked
+       this.setVisible(false);
+        new FileChooser().setVisible(true);
+        
         String clase = jlblClase.getText();
         String claseR = jlblClaseR.getText();
         String tipo = jlblTipo.getText();
@@ -337,9 +340,9 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto(horaR, 250, 100, 13, "normal");
             // Cerramos el stream
             impresora.cerrarContenido();
-
             impresora.guardarPDF();
             impresora.cerrarPDF();
+
 
         } catch (IOException e) {
 
