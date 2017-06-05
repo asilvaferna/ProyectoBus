@@ -361,6 +361,7 @@ public class Ticket extends javax.swing.JFrame {
 
         }
         System.out.println("Fichero creado en: " + PrintPDF.ruta);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonConfirmarVIajeMouseClicked
 
     private void jButtonRutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRutaMouseClicked
