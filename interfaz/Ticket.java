@@ -72,7 +72,7 @@ public class Ticket extends javax.swing.JFrame {
         jlblHoraFecha = new javax.swing.JLabel();
         jlblHoraFechaR = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButtonImprimir = new javax.swing.JButton();
+        jButtonConfirmarVIaje = new javax.swing.JButton();
         jButtonCerrar = new javax.swing.JButton();
 
         jlblTipo3.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
@@ -214,16 +214,16 @@ public class Ticket extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ticket.png"))); // NOI18N
 
-        jButtonImprimir.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonImprimir.setText("Imprimir");
-        jButtonImprimir.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonConfirmarVIaje.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jButtonConfirmarVIaje.setText("Confirmar");
+        jButtonConfirmarVIaje.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonImprimirMouseClicked(evt);
+                jButtonConfirmarVIajeMouseClicked(evt);
             }
         });
 
         jButtonCerrar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonCerrar.setText("Cerrar");
+        jButtonCerrar.setText("Volver");
         jButtonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonCerrarMouseClicked(evt);
@@ -249,7 +249,7 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jButtonImprimir)
+                        .addComponent(jButtonConfirmarVIaje)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonCerrar)))
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -262,7 +262,7 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonImprimir)
+                    .addComponent(jButtonConfirmarVIaje)
                     .addComponent(jButtonCerrar))
                 .addContainerGap())
         );
@@ -289,7 +289,10 @@ public class Ticket extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jButtonCerrarMouseClicked
 
-    private void jButtonImprimirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonImprimirMouseClicked
+    private void jButtonConfirmarVIajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmarVIajeMouseClicked
+       this.setVisible(false);
+        new FileChooser().setVisible(true);
+        
         String clase = jlblClase.getText();
         String claseR = jlblClaseR.getText();
         String tipo = jlblTipo.getText();
@@ -337,9 +340,9 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto(horaR, 250, 100, 13, "normal");
             // Cerramos el stream
             impresora.cerrarContenido();
-
             impresora.guardarPDF();
             impresora.cerrarPDF();
+
 
         } catch (IOException e) {
 
@@ -347,12 +350,12 @@ public class Ticket extends javax.swing.JFrame {
 
         }
         System.out.println("Fichero creado en: " + System.getProperty("user.dir"));
-    }//GEN-LAST:event_jButtonImprimirMouseClicked
+    }//GEN-LAST:event_jButtonConfirmarVIajeMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCerrar;
-    private javax.swing.JButton jButtonImprimir;
+    private javax.swing.JButton jButtonConfirmarVIaje;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

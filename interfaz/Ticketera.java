@@ -401,7 +401,7 @@ public class Ticketera extends javax.swing.JFrame {
         jlblTitulo.setText("BUS");
 
         jButtonTotal.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonTotal.setText("Generar Ticket");
+        jButtonTotal.setText("Siguiente");
         jButtonTotal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonTotalMouseClicked(evt);

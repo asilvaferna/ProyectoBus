@@ -1,2 +1,0 @@
-# ProyectoBus
-Proyecto ticketera bus. 

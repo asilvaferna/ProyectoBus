@@ -25,13 +25,20 @@ public class PrintPDF {
 
     private String nombreArchivo;
     private String nombreImagen;
+    private String ruta;
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
     BufferedImage awtImage;
     PDDocument doc;
     PDPage page;
     PDPageContentStream contenido;
 
     public PrintPDF() throws IOException {
-        this.nombreImagen = "../Images/bus_ticket.png";
+
+      this.nombreImagen = "src/Images/bus_ticket.png";
+
         this.doc = new PDDocument();
         this.page = new PDPage();
         this.contenido = new PDPageContentStream(doc, page);
@@ -83,7 +90,8 @@ public class PrintPDF {
     }
 
     public void guardarPDF() throws IOException {
-        doc.save(this.nombreArchivo);
+        System.out.println(ruta);
+        doc.save("src/"+this.nombreArchivo);
     }
 
     public void cerrarPDF() throws IOException {
