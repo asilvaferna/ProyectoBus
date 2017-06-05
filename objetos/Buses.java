@@ -10,29 +10,34 @@ package objetos;
  */
 public class Buses {
 
-    String ruta;
-    int identificador;
+    private int busid;
+    private String trayecto;
+    private final int plazas = 3;
 
-    public Buses(String ruta, int identificador) {
-        this.ruta = ruta;
-        this.identificador = identificador;
+    public Buses() {
     }
 
-    public String getRuta() {
-        return ruta;
+    public int getBusid() {
+        return busid;
     }
 
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
+    public void setBusid(int busid) {
+        this.busid = busid;
     }
 
-    public int getIdentificador() {
-        return identificador;
+    public String getTrayecto() {
+        return trayecto;
     }
 
-    public void setIdentificador(int identificador) {
-        this.identificador = identificador;
+    public void setTrayecto(String trayecto) {
+        this.trayecto = trayecto;
     }
+    
+    public int getPlazas(){
+        return plazas;
+    }
+    
+    
     
     
 }

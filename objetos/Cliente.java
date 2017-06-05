@@ -9,49 +9,54 @@ package objetos;
  * @author Pablo
  */
 public class Cliente {
-    
-        String nombre, apellidos, correoElectronico;
-        int dni;
+   
+    private int userid;
+    private String username;
+    private String pass;
+    private String nombre;
 
-    public Cliente(String nombre, String apellidos, String correoElectronico, int dni) {
+    public Cliente() {
+    }
+    
+    public Cliente(int userid, String username, String pass, String nombre) {
+        this.userid = userid;
+        this.username = username;
+        this.pass = pass;
         this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.correoElectronico = correoElectronico;
-        this.dni = dni;
+    }
+
+    public int getUserid() {
+        return userid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPass() {
+        return pass;
     }
 
     public String getNombre() {
         return nombre;
     }
 
+    public void setUserid(int userid) {
+        this.userid = userid;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
-        
-        
-        
+    
+    
+    
 }
