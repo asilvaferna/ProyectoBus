@@ -71,6 +71,10 @@ public class Ticket extends javax.swing.JFrame {
         jlblPrecioR = new javax.swing.JLabel();
         jlblHoraFecha = new javax.swing.JLabel();
         jlblHoraFechaR = new javax.swing.JLabel();
+        jlblNombre = new javax.swing.JLabel();
+        jlblNombreR = new javax.swing.JLabel();
+        jlblUsuario = new javax.swing.JLabel();
+        jlblUsuarioR = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButtonConfirmarVIaje = new javax.swing.JButton();
         jButtonCerrar = new javax.swing.JButton();
@@ -130,12 +134,22 @@ public class Ticket extends javax.swing.JFrame {
 
         jlblHoraFechaR.setText("jLabel1");
 
+        jlblNombre.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblNombre.setText("Nombre:");
+
+        jlblNombreR.setText("jLabel1");
+
+        jlblUsuario.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblUsuario.setText("Usuario:");
+
+        jlblUsuarioR.setText("jLabel1");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlblClase)
                     .addComponent(jlblAsiento)
@@ -144,37 +158,55 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(jlblAsientoR)
                     .addComponent(jlblTicketR)
                     .addComponent(jlblPrecioR)
-                    .addComponent(jlblPrecio))
+                    .addComponent(jlblPrecio)
+                    .addComponent(jlblNombre)
+                    .addComponent(jlblNombreR))
                 .addGap(153, 153, 153)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlblHoraFecha)
-                            .addComponent(jlblHoraFechaR))
+                            .addComponent(jlblUsuario)
+                            .addComponent(jlblUsuarioR))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlblTipo)
-                                    .addComponent(jlblDestino)
-                                    .addComponent(jlblOrigen)
-                                    .addComponent(jlblTipoR))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlblEdad)
-                                    .addComponent(jlblEdadR)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlblDestinoR)
-                                    .addComponent(jlblOrigenR))
-                                .addGap(128, 128, 128)))
-                        .addGap(56, 56, 56))))
+                                    .addComponent(jlblHoraFecha)
+                                    .addComponent(jlblHoraFechaR))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jlblTipo)
+                                        .addComponent(jlblDestino)
+                                        .addComponent(jlblOrigen)
+                                        .addComponent(jlblTipoR))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jlblEdad)
+                                        .addComponent(jlblEdadR)))
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jlblDestinoR)
+                                        .addComponent(jlblOrigenR))
+                                    .addGap(128, 128, 128))))
+                        .addGap(61, 61, 61))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jlblNombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jlblNombreR))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jlblUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jlblUsuarioR)))
+                .addGap(51, 51, 51)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlblClase)
                     .addComponent(jlblTipo)
@@ -210,7 +242,7 @@ public class Ticket extends javax.swing.JFrame {
                         .addComponent(jlblHoraFecha)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jlblHoraFechaR)))
-                .addGap(55, 55, 55))
+                .addGap(22, 22, 22))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ticket.png"))); // NOI18N
@@ -386,6 +418,8 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel jlblEdadR;
     private javax.swing.JLabel jlblHoraFecha;
     private javax.swing.JLabel jlblHoraFechaR;
+    private javax.swing.JLabel jlblNombre;
+    private javax.swing.JLabel jlblNombreR;
     private javax.swing.JLabel jlblOrigen;
     private javax.swing.JLabel jlblOrigenR;
     private javax.swing.JLabel jlblPrecio;
@@ -395,5 +429,7 @@ public class Ticket extends javax.swing.JFrame {
     private javax.swing.JLabel jlblTipo;
     private javax.swing.JLabel jlblTipo3;
     private javax.swing.JLabel jlblTipoR;
+    private javax.swing.JLabel jlblUsuario;
+    private javax.swing.JLabel jlblUsuarioR;
     // End of variables declaration//GEN-END:variables
 }

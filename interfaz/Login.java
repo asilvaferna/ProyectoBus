@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class Login extends javax.swing.JFrame {
     
-        /**
+   /**
      * Se crea y se visualiza la clase interfaz
      *
      * @param args the command line arguments
