@@ -74,6 +74,7 @@ public class Ticket extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButtonConfirmarVIaje = new javax.swing.JButton();
         jButtonCerrar = new javax.swing.JButton();
+        jButtonRuta = new javax.swing.JButton();
 
         jlblTipo3.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblTipo3.setText("Nº Ticket:");
@@ -235,6 +236,14 @@ public class Ticket extends javax.swing.JFrame {
             }
         });
 
+        jButtonRuta.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jButtonRuta.setText("Cambiar directorio de almacenaje");
+        jButtonRuta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonRutaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -250,6 +259,8 @@ public class Ticket extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jButtonConfirmarVIaje)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonRuta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonCerrar)))
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -263,7 +274,8 @@ public class Ticket extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConfirmarVIaje)
-                    .addComponent(jButtonCerrar))
+                    .addComponent(jButtonCerrar)
+                    .addComponent(jButtonRuta))
                 .addContainerGap())
         );
 
@@ -290,8 +302,7 @@ public class Ticket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCerrarMouseClicked
 
     private void jButtonConfirmarVIajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmarVIajeMouseClicked
-       this.setVisible(false);
-        new FileChooser().setVisible(true);
+       
         
         String clase = jlblClase.getText();
         String claseR = jlblClaseR.getText();
@@ -349,13 +360,18 @@ public class Ticket extends javax.swing.JFrame {
             System.out.println(e.getMessage());
 
         }
-        System.out.println("Fichero creado en: " + System.getProperty("user.dir"));
+        System.out.println("Fichero creado en: " + PrintPDF.ruta);
     }//GEN-LAST:event_jButtonConfirmarVIajeMouseClicked
+
+    private void jButtonRutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRutaMouseClicked
+        new FileChooser().setVisible(true);
+    }//GEN-LAST:event_jButtonRutaMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCerrar;
     private javax.swing.JButton jButtonConfirmarVIaje;
+    private javax.swing.JButton jButtonRuta;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
