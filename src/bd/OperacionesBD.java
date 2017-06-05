@@ -114,9 +114,9 @@ public class OperacionesBD {
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                username = rs.getString("userid");
+                userid = rs.getString("userid");
             }
-            return username;
+            return userid;
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
