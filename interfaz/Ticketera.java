@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import bd.OperacionesBD;
 import operaciones.Viaje;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -25,6 +26,10 @@ public class Ticketera extends javax.swing.JFrame {
      */
     public Ticketera() {
         initComponents();
+
+        //Componentes obsoletos
+        jComboBoxNBilletes.setVisible(false);
+        jlblNBilletes.setVisible(false);
     }
 
     public String getDestino() {
@@ -32,7 +37,8 @@ public class Ticketera extends javax.swing.JFrame {
     }
 
     public int getBilletes() {
-        return Integer.parseInt(jComboBoxNBilletes.getSelectedItem().toString());
+//        return Integer.parseInt(jComboBoxNBilletes.getSelectedItem().toString());
+        return 1;
     }
 
     public String getTipo() {
@@ -505,13 +511,14 @@ public class Ticketera extends javax.swing.JFrame {
         jlblTotalR.setText(dosDecimales.format(getBilletes() * importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
     }
     private void jButtonTotalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTotalMouseClicked
+       OperacionesBD consulta = new OperacionesBD();
         totalizador();
 
         String totalUnitario = String.valueOf(dosDecimales.format(importe.precioBilleteDII(getDestino(), getClase(), getEdad(), getTipo())) + " €");
 
         // Abrir ventana de Ticket
         for (int i = 0; i < getBilletes(); i++) {
-            Ticket ticket = new Ticket(getClase(), getTipo(), getEdad(), getDestino(), totalUnitario, getTiempo());
+            Ticket ticket = new Ticket(consulta.getUserName(Login.userID),  consulta.getUserUsername(Login.userID), getClase(), getTipo(), getEdad(), getDestino(), totalUnitario, getTiempo());
             Viaje viaje = new Viaje(ticket.referencia, getClase(), getTipo(), getEdad(), getDestino());
             ticket.setVisible(true);
             base.add(viaje);

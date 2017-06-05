@@ -24,39 +24,41 @@ public class Cliente {
         this.pass = pass;
         this.nombre = nombre;
     }
+    
+
 
     public int getUserid() {
         return userid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 
     public void setUserid(int userid) {
         this.userid = userid;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPass() {
+        return pass;
     }
 
     public void setPass(String pass) {
         this.pass = pass;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
+
+
     
 }

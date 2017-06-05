@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import bd.OperacionesBD;
 import java.io.IOException;
 import impresora.PrintPDF;
 import ticket.Number;
@@ -25,11 +26,13 @@ public class Ticket extends javax.swing.JFrame {
         initComponents();
     }
 
-    public Ticket(String clase, String tipo, String edad, String destino, String precio, String hora) {
+    public Ticket(String nombre, String usuario, String clase, String tipo, String edad, String destino, String precio, String hora) {
         initComponents();
 
         referencia = Number.id_Alf_Num();
 
+        jlblNombreR.setText(nombre);
+        jlblUsuarioR.setText(usuario);
         jlblClaseR.setText(clase);
         jlblTipoR.setText(tipo);
         jlblEdadR.setText(edad);
@@ -52,6 +55,7 @@ public class Ticket extends javax.swing.JFrame {
 
         jlblTipo3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jlblClase = new javax.swing.JLabel();
         jlblTipo = new javax.swing.JLabel();
@@ -75,17 +79,20 @@ public class Ticket extends javax.swing.JFrame {
         jlblNombreR = new javax.swing.JLabel();
         jlblUsuario = new javax.swing.JLabel();
         jlblUsuarioR = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jButtonConfirmarVIaje = new javax.swing.JButton();
-        jButtonCerrar = new javax.swing.JButton();
         jButtonRuta = new javax.swing.JButton();
+        jButtonCerrar = new javax.swing.JButton();
 
         jlblTipo3.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblTipo3.setText("Nº Ticket:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 203, 196));
 
         jPanel1.setBackground(new java.awt.Color(102, 203, 196));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ticket.png"))); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -110,38 +117,49 @@ public class Ticket extends javax.swing.JFrame {
         jlblDestino.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblDestino.setText("Destino:");
 
+        jlblClaseR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblClaseR.setText("jLabel1");
 
+        jlblTipoR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblTipoR.setText("jLabel1");
 
+        jlblEdadR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblEdadR.setText("jLabel1");
 
+        jlblAsientoR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblAsientoR.setText("jLabel1");
 
+        jlblOrigenR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblOrigenR.setText("jLabel1");
 
+        jlblDestinoR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblDestinoR.setText("jLabel1");
 
+        jlblTicketR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblTicketR.setText("jLabel1");
 
         jlblPrecio.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblPrecio.setText("Precio: ");
 
+        jlblPrecioR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblPrecioR.setText("jLabel1");
 
         jlblHoraFecha.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblHoraFecha.setText("Hora y Fecha:");
 
+        jlblHoraFechaR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblHoraFechaR.setText("jLabel1");
 
         jlblNombre.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblNombre.setText("Nombre:");
 
+        jlblNombreR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblNombreR.setText("jLabel1");
 
         jlblUsuario.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblUsuario.setText("Usuario:");
 
+        jlblUsuarioR.setFont(new java.awt.Font("MACGrande Medium", 1, 12)); // NOI18N
         jlblUsuarioR.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -161,37 +179,26 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(jlblPrecio)
                     .addComponent(jlblNombre)
                     .addComponent(jlblNombreR))
-                .addGap(153, 153, 153)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlblUsuario)
+                    .addComponent(jlblUsuarioR)
+                    .addComponent(jlblHoraFecha)
+                    .addComponent(jlblHoraFechaR)
+                    .addComponent(jlblDestino)
+                    .addComponent(jlblOrigen)
+                    .addComponent(jlblDestinoR)
+                    .addComponent(jlblOrigenR)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlblUsuario)
-                            .addComponent(jlblUsuarioR))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlblHoraFecha)
-                                    .addComponent(jlblHoraFechaR))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jlblTipo)
-                                        .addComponent(jlblDestino)
-                                        .addComponent(jlblOrigen)
-                                        .addComponent(jlblTipoR))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jlblEdad)
-                                        .addComponent(jlblEdadR)))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jlblDestinoR)
-                                        .addComponent(jlblOrigenR))
-                                    .addGap(128, 128, 128))))
-                        .addGap(61, 61, 61))))
+                            .addComponent(jlblTipo)
+                            .addComponent(jlblTipoR))
+                        .addGap(44, 44, 44)))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlblEdad)
+                    .addComponent(jlblEdadR))
+                .addGap(52, 52, 52))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,26 +252,11 @@ public class Ticket extends javax.swing.JFrame {
                 .addGap(22, 22, 22))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ticket.png"))); // NOI18N
-
         jButtonConfirmarVIaje.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonConfirmarVIaje.setText("Confirmar");
+        jButtonConfirmarVIaje.setText("CREAR");
         jButtonConfirmarVIaje.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonConfirmarVIajeMouseClicked(evt);
-            }
-        });
-
-        jButtonCerrar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonCerrar.setText("Volver");
-        jButtonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonCerrarMouseClicked(evt);
-            }
-        });
-        jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCerrarActionPerformed(evt);
             }
         });
 
@@ -276,46 +268,55 @@ public class Ticket extends javax.swing.JFrame {
             }
         });
 
+        jButtonCerrar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jButtonCerrar.setText("SALIR");
+        jButtonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonCerrarMouseClicked(evt);
+            }
+        });
+        jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCerrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(195, 195, 195))
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jButtonConfirmarVIaje)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonRuta)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonCerrar)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonConfirmarVIaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonConfirmarVIaje)
-                    .addComponent(jButtonCerrar)
-                    .addComponent(jButtonRuta))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonConfirmarVIaje)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,8 +335,11 @@ public class Ticket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCerrarMouseClicked
 
     private void jButtonConfirmarVIajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmarVIajeMouseClicked
-       
-        
+
+        String nombre = jlblNombre.getText();
+        String nombreR = jlblNombreR.getText();
+        String usuario = jlblUsuario.getText();
+        String usuarioR = jlblUsuarioR.getText();
         String clase = jlblClase.getText();
         String claseR = jlblClaseR.getText();
         String tipo = jlblTipo.getText();
@@ -362,30 +366,38 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto("Vigo Bus Ticket", 300, 710, 32, "negrita");
             impresora.imprimeImagen(70, 650);
             // Cuerpo: titulos
-            impresora.imprimeTexto(clase, 50, 600, 16, "normal");
-            impresora.imprimeTexto(tipo, 250, 600, 16, "normal");
-            impresora.imprimeTexto(edad, 450, 600, 16, "normal");
-            impresora.imprimeTexto(asiento, 50, 450, 16, "normal");
-            impresora.imprimeTexto(origen, 250, 450, 16, "normal");
+            impresora.imprimeTexto(nombre, 50, 600, 16, "normal");
+            impresora.imprimeTexto(usuario, 250, 600, 16, "normal");
+            impresora.imprimeTexto(clase, 50, 500, 16, "normal");
+            impresora.imprimeTexto(tipo, 250, 500, 16, "normal");
+            impresora.imprimeTexto(edad, 450, 500, 16, "normal");
+            impresora.imprimeTexto(asiento, 50, 400, 16, "normal");
+            impresora.imprimeTexto(origen, 250, 400, 16, "normal");
             impresora.imprimeTexto(ticket, 50, 300, 16, "normal");
             impresora.imprimeTexto(destino, 250, 300, 16, "normal");
-            impresora.imprimeTexto(precio, 50, 150, 16, "normal");
-            impresora.imprimeTexto(hora, 250, 150, 16, "normal");
+            impresora.imprimeTexto(precio, 50, 100, 16, "normal");
+            impresora.imprimeTexto(hora, 250, 100, 16, "normal");
             // Cuerpo: resultados
-            impresora.imprimeTexto(claseR, 50, 550, 13, "normal");
-            impresora.imprimeTexto(tipoR, 250, 550, 13, "normal");
-            impresora.imprimeTexto(edadR, 450, 550, 13, "normal");
-            impresora.imprimeTexto(origenR, 250, 400, 13, "normal");
-            impresora.imprimeTexto(asientoR, 50, 400, 13, "normal");
+            impresora.imprimeTexto(nombreR, 50, 550, 13, "normal");
+            impresora.imprimeTexto(usuarioR, 250, 550, 13, "normal");
+            impresora.imprimeTexto(claseR, 50, 450, 13, "normal");
+            impresora.imprimeTexto(tipoR, 250, 450, 13, "normal");
+            impresora.imprimeTexto(edadR, 450, 450, 13, "normal");
+            impresora.imprimeTexto(origenR, 250, 350, 13, "normal");
+            impresora.imprimeTexto(asientoR, 50, 350, 13, "normal");
             impresora.imprimeTexto(destinoR, 250, 250, 13, "normal");
             impresora.imprimeTexto(ticketR, 50, 250, 13, "normal");
-            impresora.imprimeTexto(precioR, 50, 100, 13, "normal");
-            impresora.imprimeTexto(horaR, 250, 100, 13, "normal");
+            impresora.imprimeTexto(precioR, 50, 150, 13, "normal");
+            impresora.imprimeTexto(horaR, 250, 150, 13, "normal");
             // Cerramos el stream
             impresora.cerrarContenido();
             impresora.guardarPDF();
             impresora.cerrarPDF();
-
+            
+            //Inserccion en base
+            OperacionesBD sql= new OperacionesBD();
+//            sql.insertViaje(sql., bus);
+            
 
         } catch (IOException e) {
 

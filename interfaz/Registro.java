@@ -77,12 +77,13 @@ public class Registro extends javax.swing.JFrame {
         jTCorreoELectronico = new javax.swing.JTextField();
         jTLetraDNI = new javax.swing.JTextField();
         jlblNombre1 = new javax.swing.JLabel();
-        jlAlerta = new javax.swing.JLabel();
         jlContraseña = new javax.swing.JLabel();
         jPassword = new javax.swing.JPasswordField();
         jlblTitulo = new javax.swing.JLabel();
         jBConfirmar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jlAlerta = new javax.swing.JLabel();
+        jLVolver = new javax.swing.JLabel();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -137,10 +138,6 @@ public class Registro extends javax.swing.JFrame {
         jlblNombre1.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlblNombre1.setText("Nombre");
 
-        jlAlerta.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jlAlerta.setForeground(new java.awt.Color(234, 14, 28));
-        jlAlerta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
         jlContraseña.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlContraseña.setText("Contraseña");
 
@@ -175,13 +172,11 @@ public class Registro extends javax.swing.JFrame {
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addComponent(jlContraseña)
-                        .addGap(93, 93, 93))
+                        .addGap(622, 622, 622))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jlAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(282, 282, 282)
+                        .addGap(541, 541, 541)))
                 .addComponent(jlGuion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -207,9 +202,7 @@ public class Registro extends javax.swing.JFrame {
                 .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jlGuion)
-                            .addComponent(jlAlerta, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)))
+                        .addComponent(jlGuion))
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jlContraseña)
@@ -222,7 +215,7 @@ public class Registro extends javax.swing.JFrame {
         jlblTitulo.setText("NUEVO USUARIO");
 
         jBConfirmar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jBConfirmar.setText("Confirmar");
+        jBConfirmar.setText("Crear");
         jBConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBConfirmarActionPerformed(evt);
@@ -230,6 +223,19 @@ public class Registro extends javax.swing.JFrame {
         });
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bus.png"))); // NOI18N
+
+        jlAlerta.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlAlerta.setForeground(new java.awt.Color(234, 14, 28));
+        jlAlerta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLVolver.setFont(new java.awt.Font("Dialog", 2, 10)); // NOI18N
+        jLVolver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLVolver.setText("Iniciar sesión con mi usuario y contraseña");
+        jLVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLVolverMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelBackground1Layout = new javax.swing.GroupLayout(jPanelBackground1);
         jPanelBackground1.setLayout(jPanelBackground1Layout);
@@ -245,9 +251,13 @@ public class Registro extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBConfirmar, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanelBackground2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanelBackground2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelBackground1Layout.createSequentialGroup()
+                                .addComponent(jlAlerta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jBConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanelBackground1Layout.setVerticalGroup(
@@ -263,17 +273,18 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jPanelBackground2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBConfirmar)
-                .addContainerGap())
+                .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jlAlerta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelBackground1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanelBackground1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,15 +296,28 @@ public class Registro extends javax.swing.JFrame {
 
 
     private void jBConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConfirmarActionPerformed
-        this.setVisible(false);
+
+        try{
         OperacionesBD operaciones = new OperacionesBD();
         operaciones.insertUser(usuarioNuevo());
-        new Login().setVisible(true);
+                this.setVisible(false);
+                        new Login().setVisible(true);
+        }catch(Exception ex){
+              jlAlerta.setText("Todos los campos deben ser rellenados.");
+        }
+        
+        
+
     }//GEN-LAST:event_jBConfirmarActionPerformed
 
     private void jTDNIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTDNIKeyReleased
         letraDNI();
     }//GEN-LAST:event_jTDNIKeyReleased
+
+    private void jLVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLVolverMouseClicked
+        this.setVisible(false);
+        new Login().setVisible(true);
+    }//GEN-LAST:event_jLVolverMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -302,6 +326,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JButton jBConfirmar;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
+    private javax.swing.JLabel jLVolver;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

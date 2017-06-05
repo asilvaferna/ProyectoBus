@@ -106,6 +106,42 @@ public class OperacionesBD {
         }
 
     }
+    
+        public String getUserName(int userid) {
+        String sql = "SELECT name FROM Usuario where userid = " + userid + ";";
+        String name = null;
+        try {
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                name = rs.getString("name");
+            }
+            return name;
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+
+    }
+    
+        public int getUserID(String username) {
+        String sql = "SELECT userid FROM Usuario where userid = " +"'"+ username +"'"+ ";";
+          int userid = 0;
+        try {
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                userid = rs.getInt("userid");
+            }
+            return userid;
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return 0;
+        }
+
+    }
 
     public void insertViaje(Cliente cliente, objetos.Buses bus) {
         try {
