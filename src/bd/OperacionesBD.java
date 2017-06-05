@@ -107,14 +107,14 @@ public class OperacionesBD {
 
     }
     
-        public String getUserID(String username) {
+        public int getUserID(String username) {
         String sql = "SELECT userid FROM Usuario where userid = " +"'"+ username +"'"+ ";";
-        String userid = null;
+          int userid;
         try {
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                userid = rs.getString("userid");
+                userid = rs.getInt("userid");
             }
             return userid;
 
