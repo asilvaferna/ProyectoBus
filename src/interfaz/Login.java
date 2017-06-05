@@ -15,6 +15,14 @@ import java.util.logging.Logger;
  */
 public class Login extends javax.swing.JFrame {
 
+    static int userID;
+
+    public Login(int userID) {
+        this.userID = userID;
+    }
+
+    
+    
     /**
      * Se crea y se visualiza la clase interfaz
      *
@@ -28,9 +36,9 @@ public class Login extends javax.swing.JFrame {
         OperacionesBD consulta = new OperacionesBD();
         try {
 
-            int userid = consulta.getUserID(jTCorreoELectronico.getText());
-            String username = consulta.getUserUsername(userid);
-            String userpass = consulta.getUserPassword(userid);
+            userID = consulta.getUserID(jTCorreoELectronico.getText());
+            String username = consulta.getUserUsername(userID);
+            String userpass = consulta.getUserPassword(userID);
 
             if (username.isEmpty()) {
 
