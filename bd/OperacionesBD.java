@@ -11,8 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import objetos.Cliente;
 
 /**
@@ -108,5 +106,20 @@ public class OperacionesBD {
         }
 
     }
+
+    public void insertViaje(Cliente cliente, objetos.Buses bus) {
+        try {
+            String sql = "INSERT INTO Viajes VALUES(?,?)";
+            PreparedStatement pstmt = c.prepareStatement(sql);
+            pstmt.setInt(1, cliente.getUserid());
+            pstmt.setInt(2, bus.getBusid());
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            // si salta el sqlexception significa que ya existe ese identificador
+            System.out.println("Error al insertar");
+        }
+    }
+    
+    
 
 }
