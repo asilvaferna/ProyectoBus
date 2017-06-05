@@ -18,7 +18,7 @@ public class Registro extends javax.swing.JFrame {
 
     }
 
-    public Cliente usuarioNuevo() {
+    public void usuarioNuevo() {
         
         String nombre = jTNombre.getText();
         String apellidos = jTApellidos.getText();
@@ -27,7 +27,6 @@ public class Registro extends javax.swing.JFrame {
         String correo = jTCorreoELectronico.getText();
         String password = jPassword.getSelectedText();
 
-        return new Cliente(nombre, apellidos, correo, edad, dni, password);
     }
 
     public void letraDNI() {
