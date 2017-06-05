@@ -25,11 +25,13 @@ public class Ticket extends javax.swing.JFrame {
         initComponents();
     }
 
-    public Ticket(String clase, String tipo, String edad, String destino, String precio, String hora) {
+    public Ticket(String nombre, String usuario, String clase, String tipo, String edad, String destino, String precio, String hora) {
         initComponents();
 
         referencia = Number.id_Alf_Num();
 
+        jlblNombreR.setText(nombre);
+        jlblUsuarioR.setText(usuario);
         jlblClaseR.setText(clase);
         jlblTipoR.setText(tipo);
         jlblEdadR.setText(edad);
@@ -332,8 +334,11 @@ public class Ticket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCerrarMouseClicked
 
     private void jButtonConfirmarVIajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmarVIajeMouseClicked
-       
-        
+
+        String nombre = jlblNombre.getText();
+        String nombreR = jlblNombreR.getText();
+        String usuario = jlblUsuario.getText();
+        String usuarioR = jlblUsuarioR.getText();
         String clase = jlblClase.getText();
         String claseR = jlblClaseR.getText();
         String tipo = jlblTipo.getText();
@@ -360,30 +365,33 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto("Vigo Bus Ticket", 300, 710, 32, "negrita");
             impresora.imprimeImagen(70, 650);
             // Cuerpo: titulos
-            impresora.imprimeTexto(clase, 50, 600, 16, "normal");
-            impresora.imprimeTexto(tipo, 250, 600, 16, "normal");
-            impresora.imprimeTexto(edad, 450, 600, 16, "normal");
-            impresora.imprimeTexto(asiento, 50, 450, 16, "normal");
-            impresora.imprimeTexto(origen, 250, 450, 16, "normal");
+            impresora.imprimeTexto(nombre, 50, 600, 16, "normal");
+            impresora.imprimeTexto(usuario, 250, 600, 16, "normal");
+            impresora.imprimeTexto(clase, 50, 500, 16, "normal");
+            impresora.imprimeTexto(tipo, 250, 500, 16, "normal");
+            impresora.imprimeTexto(edad, 450, 500, 16, "normal");
+            impresora.imprimeTexto(asiento, 50, 400, 16, "normal");
+            impresora.imprimeTexto(origen, 250, 400, 16, "normal");
             impresora.imprimeTexto(ticket, 50, 300, 16, "normal");
             impresora.imprimeTexto(destino, 250, 300, 16, "normal");
-            impresora.imprimeTexto(precio, 50, 150, 16, "normal");
-            impresora.imprimeTexto(hora, 250, 150, 16, "normal");
+            impresora.imprimeTexto(precio, 50, 100, 16, "normal");
+            impresora.imprimeTexto(hora, 250, 100, 16, "normal");
             // Cuerpo: resultados
-            impresora.imprimeTexto(claseR, 50, 550, 13, "normal");
-            impresora.imprimeTexto(tipoR, 250, 550, 13, "normal");
-            impresora.imprimeTexto(edadR, 450, 550, 13, "normal");
-            impresora.imprimeTexto(origenR, 250, 400, 13, "normal");
-            impresora.imprimeTexto(asientoR, 50, 400, 13, "normal");
+            impresora.imprimeTexto(nombreR, 50, 550, 13, "normal");
+            impresora.imprimeTexto(usuarioR, 250, 550, 13, "normal");
+            impresora.imprimeTexto(claseR, 50, 450, 13, "normal");
+            impresora.imprimeTexto(tipoR, 250, 450, 13, "normal");
+            impresora.imprimeTexto(edadR, 450, 450, 13, "normal");
+            impresora.imprimeTexto(origenR, 250, 350, 13, "normal");
+            impresora.imprimeTexto(asientoR, 50, 350, 13, "normal");
             impresora.imprimeTexto(destinoR, 250, 250, 13, "normal");
             impresora.imprimeTexto(ticketR, 50, 250, 13, "normal");
-            impresora.imprimeTexto(precioR, 50, 100, 13, "normal");
-            impresora.imprimeTexto(horaR, 250, 100, 13, "normal");
+            impresora.imprimeTexto(precioR, 50, 150, 13, "normal");
+            impresora.imprimeTexto(horaR, 250, 150, 13, "normal");
             // Cerramos el stream
             impresora.cerrarContenido();
             impresora.guardarPDF();
             impresora.cerrarPDF();
-
 
         } catch (IOException e) {
 
