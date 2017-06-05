@@ -5,6 +5,7 @@
  */
 package interfaz;
 
+import bd.OperacionesBD;
 import java.io.IOException;
 import impresora.PrintPDF;
 import ticket.Number;
@@ -392,6 +393,11 @@ public class Ticket extends javax.swing.JFrame {
             impresora.cerrarContenido();
             impresora.guardarPDF();
             impresora.cerrarPDF();
+            
+            //Inserccion en base
+            OperacionesBD sql= new OperacionesBD();
+//            sql.insertViaje(sql., bus);
+            
 
         } catch (IOException e) {
 
