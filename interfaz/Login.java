@@ -126,9 +126,10 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jlblTelefono)
                             .addComponent(jlblCorreo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTCorreoELectronico)
-                            .addComponent(jPassword)))
+                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                            .addComponent(jTCorreoELectronico))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addComponent(jlAlert, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -248,15 +249,6 @@ public class Login extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(()->{
             new Login().setVisible(true);
         });
-        
-        objetos.Cliente cliente = new objetos.Cliente();
-        cliente.setNombre("Adrian");
-        cliente.setPass("prueba");
-        cliente.setUserid(123456);
-        cliente.setUsername("AdriSilva");
-        
-        bd.OperacionesBD base = new bd.OperacionesBD();
-        //base.insertUser(cliente);
         
     }
     
