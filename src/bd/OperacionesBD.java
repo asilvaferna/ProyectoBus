@@ -109,7 +109,7 @@ public class OperacionesBD {
     
         public int getUserID(String username) {
         String sql = "SELECT userid FROM Usuario where userid = " +"'"+ username +"'"+ ";";
-          int userid;
+          int userid = 0;
         try {
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
@@ -120,7 +120,7 @@ public class OperacionesBD {
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            return null;
+            return 0;
         }
 
     }
