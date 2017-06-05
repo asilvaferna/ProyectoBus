@@ -108,7 +108,7 @@ public class OperacionesBD {
     }
     
         public String getUserName(int userid) {
-        String sql = "SELECT name FROM Usuario where userid = " + userid + ";";
+        String sql = "SELECT nombre FROM Usuario where userid = " + userid + ";";
         String name = null;
         try {
             stmt = c.createStatement();
