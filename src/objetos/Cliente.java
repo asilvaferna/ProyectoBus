@@ -24,6 +24,8 @@ public class Cliente {
         this.pass = pass;
         this.nombre = nombre;
     }
+    
+
 
     public int getUserid() {
         return userid;
