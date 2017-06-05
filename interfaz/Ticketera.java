@@ -5,7 +5,7 @@
  */
 package interfaz;
 
-import ProyectoBus.Viaje;
+import operaciones.Viaje;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -31,7 +31,7 @@ public class PrintPDF {
     PDPageContentStream contenido;
 
     public PrintPDF() throws IOException {
-        this.nombreImagen = "/Users/Adri/NetBeansProjects/ProyectoBus/src/Images/bus_ticket.png";
+        this.nombreImagen = "../Images/bus_ticket.png";
         this.doc = new PDDocument();
         this.page = new PDPage();
         this.contenido = new PDPageContentStream(doc, page);
