@@ -57,7 +57,7 @@ public class FileChooser extends javax.swing.JFrame {
         jFileChooser.setSelectedFiles(null);
         jFileChooser.setVerifyInputWhenFocusTarget(false);
 
-        jBGuardar.setText("GUARDAR");
+        jBGuardar.setText("SIGUIENTE");
         jBGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jBGuardarMouseClicked(evt);
@@ -119,20 +119,9 @@ public class FileChooser extends javax.swing.JFrame {
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
                                     
-        try {
-            PrintPDF impresora = new PrintPDF();
-            this.setVisible(false);
-            
-            File directorio = jFileChooser.getSelectedFile();
-            System.out.println(directorio.getAbsolutePath());
-            
-            impresora.setRuta(directorio.getAbsolutePath());           
-            impresora.guardarPDF();
-   
-            impresora.cerrarPDF();
-        } catch (IOException ex) {
-            Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        File directorio = jFileChooser.getSelectedFile();
+        PrintPDF.ruta = directorio.getAbsolutePath();
+        this.setVisible(false);
             
 
        

@@ -65,6 +65,8 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                           <Component id="jButtonConfirmarVIaje" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButtonRuta" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jButtonCerrar" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -83,6 +85,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButtonConfirmarVIaje" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonCerrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonRuta" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -351,6 +354,17 @@
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonCerrarMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCerrarActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonRuta">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Krungthep" size="13" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cambiar directorio de almacenaje"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonRutaMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>
