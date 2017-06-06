@@ -6,8 +6,6 @@
 package interfaz;
 
 import bd.OperacionesBD;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @authorr Pablo
@@ -33,33 +31,20 @@ public class Login extends javax.swing.JFrame {
     public void comprobarUsuario() {
         OperacionesBD consulta = new OperacionesBD();
         try {
-
-            userID = consulta.getUserID(jTCorreoELectronico.getText());
-            String username = consulta.getUserUsername(userID);
-            String userpass = consulta.getUserPassword(userID);
+            String username = jTCorreoELectronico.getText();
+            String userpass = new String(jPassword.getPassword());
 
             if (username.isEmpty()) {
-
                 jlAlert.setText("Usuario o contraseña incorrectos.");
-
-            } else if (jPassword.getText().equalsIgnoreCase(userpass)) {
-
+            } else if (consulta.getCredentials(username, userpass).equals(username + userpass)) {
                 new Ticketera().setVisible(true);
                 this.setVisible(false);
-
             } else {
                 jlAlert.setText("Usuario o contraseña incorrectos.");
             }
 
         } catch (Exception ex) {
             jlAlert.setText("Usuario o contraseña incorrectos.");
-
-            //CONDICIÓN PARA PRUEBAS
-//            if (jPassword.getText().equalsIgnoreCase("root") && jTCorreoELectronico.getText().equalsIgnoreCase("root")) {
-//
-//                new Ticketera().setVisible(true);
-//                this.setVisible(false);
-//            }
         }
     }
 

@@ -53,7 +53,7 @@ public class OperacionesBD {
             pstmt.setString(3, cliente.getPass());
             pstmt.setString(4, cliente.getNombre());
             pstmt.executeUpdate();
-            
+
             return true;
         } catch (SQLException ex) {
             // si salta el sqlexception significa que ya existe ese identificador
@@ -77,14 +77,12 @@ public class OperacionesBD {
     }
 
     public String getUserPassword(int userid) {
-        String sql = "SELECT pass FROM Usuario where userid = " + userid + ";";
+        String sql = "SELECT pass FROM Usuario where userid = ?;";
         String pass = null;
         try {
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                pass = rs.getString("pass");
-            }
+            PreparedStatement pstmt = c.prepareStatement(sql);
+            pstmt.setInt(1, userid);
+            pstmt.executeUpdate();
             return pass;
 
         } catch (SQLException ex) {
@@ -95,14 +93,12 @@ public class OperacionesBD {
     }
 
     public String getUserUsername(int userid) {
-        String sql = "SELECT username FROM Usuario where userid = " + userid + ";";
+        String sql = "SELECT username FROM Usuario where userid = ?;";
         String username = null;
         try {
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                username = rs.getString("username");
-            }
+            PreparedStatement pstmt = c.prepareStatement(sql);
+            pstmt.setInt(1, userid);
+            pstmt.executeUpdate();
             return username;
 
         } catch (SQLException ex) {
@@ -113,14 +109,12 @@ public class OperacionesBD {
     }
 
     public String getUserName(int userid) {
-        String sql = "SELECT nombre FROM Usuario where userid = " + userid + ";";
+        String sql = "SELECT nombre FROM Usuario where userid = ?;";
         String name = null;
         try {
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                name = rs.getString("nombre");
-            }
+            PreparedStatement pstmt = c.prepareStatement(sql);
+            pstmt.setInt(1, userid);
+            pstmt.executeUpdate();
             return name;
 
         } catch (SQLException ex) {
@@ -131,16 +125,13 @@ public class OperacionesBD {
     }
 
     public int getUserID(String username) {
-        String sql = "SELECT userid FROM Usuario where username = " + "'" + username + "'" + ";";
+        String sql = "SELECT userid FROM Usuario where username =?;";
         int userid = 0;
         try {
-            stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                userid = rs.getInt("userid");
-            }
+            PreparedStatement pstmt = c.prepareStatement(sql);
+            pstmt.setString(1, username);
+            pstmt.executeUpdate();
             return userid;
-
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
             return 0;
@@ -160,6 +151,38 @@ public class OperacionesBD {
             // si salta el sqlexception significa que ya existe ese identificador
             System.out.println("Error al insertar");
         }
+    }
+
+    public String getCredentials(String username, String pass) {
+        try {
+            PreparedStatement s;
+            s = c.prepareStatement("SELECT username, pass FROM Usuario where username=? AND pass=?;");
+            s.setString(1, username);
+            s.setString(2, pass);
+            s.execute();
+            return username + pass;
+        } catch (SQLException ex) {
+            System.out.println("Credenciales incorrectos");
+            return null;
+        }
+
+    }
+
+    public int getBusID(String ruta) {
+        String sql = "SELECT busid FROM Bus where trayecto ='" + ruta + "';";
+        int busid = 0;
+        try {
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                busid = rs.getInt("busid");
+            }
+            return busid;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return 0;
+        }
+
     }
 
 }

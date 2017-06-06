@@ -249,7 +249,7 @@ public class Ticket extends javax.swing.JFrame {
         );
 
         jButtonConfirmarVIaje.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonConfirmarVIaje.setText("CREAR");
+        jButtonConfirmarVIaje.setText("Imprimir");
         jButtonConfirmarVIaje.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonConfirmarVIajeMouseClicked(evt);
@@ -257,7 +257,7 @@ public class Ticket extends javax.swing.JFrame {
         });
 
         jButtonCerrar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonCerrar.setText("SALIR");
+        jButtonCerrar.setText("Salir");
         jButtonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonCerrarMouseClicked(evt);
@@ -274,10 +274,15 @@ public class Ticket extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonConfirmarVIaje)
+<<<<<<< HEAD
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonCerrar)))
+=======
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonCerrar))
+                    .addComponent(jButtonRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+>>>>>>> Adri
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -379,9 +384,24 @@ FileChooser visualizar = new FileChooser();
 
             
             visualizar.confirmacion(impresora);
+
             //Inserccion en base
             OperacionesBD sql= new OperacionesBD();
-//            sql.insertViaje(sql., bus);
+           
+            objetos.Buses bus = new objetos.Buses();
+            bus.setBusid(sql.getBusID(destinoR));
+            bus.setTrayecto(destinoR);
+            
+            objetos.Cliente cliente = new objetos.Cliente();
+            cliente.setNombre(nombreR);
+            cliente.setUserid(sql.getUserID(usuarioR));
+            cliente.setPass(sql.getUserPassword(cliente.getUserid()));
+            cliente.setUsername(usuarioR);
+            
+            sql.insertViaje(cliente, bus);
+            
+            
+            
             
 
         } catch (IOException e) {
