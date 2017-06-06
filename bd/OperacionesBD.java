@@ -33,6 +33,7 @@ public class OperacionesBD {
         try {
             Class.forName("org.postgresql.Driver");
             return DriverManager.getConnection(url, user, pwd);
+
         } catch (ClassNotFoundException ex) {
             System.out.println("Error en la clase");
             return null;
@@ -40,6 +41,7 @@ public class OperacionesBD {
             System.out.println("Error en la conexion");
             return null;
         }
+
     }
 
     public void insertUser(Cliente cliente) {
@@ -126,7 +128,7 @@ public class OperacionesBD {
     }
     
         public int getUserID(String username) {
-        String sql = "SELECT userid FROM Usuario where userid = " +"'"+ username +"'"+ ";";
+        String sql = "SELECT userid FROM Usuario where username = " +"'"+ username +"'"+ ";";
           int userid = 0;
         try {
             stmt = c.createStatement();
