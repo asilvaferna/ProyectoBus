@@ -21,8 +21,6 @@ public class Login extends javax.swing.JFrame {
         this.userID = userID;
     }
 
-    
-    
     /**
      * Se crea y se visualiza la clase interfaz
      *
@@ -44,30 +42,24 @@ public class Login extends javax.swing.JFrame {
 
                 jlAlert.setText("Usuario o contraseña incorrectos.");
 
+            } else if (jPassword.getText().equalsIgnoreCase(userpass)) {
+
+                new Ticketera().setVisible(true);
+                this.setVisible(false);
+
             } else {
-
-
-                if (jPassword.getText().equalsIgnoreCase(userpass)) {
-
-                    new Ticketera().setVisible(true);
-                    this.setVisible(false);
-
-                } else {
-                    jlAlert.setText("Usuario o contraseña incorrectos.");
-                }
-
+                jlAlert.setText("Usuario o contraseña incorrectos.");
             }
 
         } catch (Exception ex) {
             jlAlert.setText("Usuario o contraseña incorrectos.");
-            
-          //CONDICIÓN PARA PRUEBAS
+
+            //CONDICIÓN PARA PRUEBAS
 //            if (jPassword.getText().equalsIgnoreCase("root") && jTCorreoELectronico.getText().equalsIgnoreCase("root")) {
 //
 //                new Ticketera().setVisible(true);
 //                this.setVisible(false);
 //            }
-
         }
     }
 
@@ -146,6 +138,12 @@ public class Login extends javax.swing.JFrame {
         jlAlerta.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlAlerta.setForeground(new java.awt.Color(234, 14, 28));
         jlAlerta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordKeyPressed(evt);
+            }
+        });
 
         jlAlert.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlAlert.setForeground(new java.awt.Color(212, 37, 57));
@@ -280,6 +278,12 @@ public class Login extends javax.swing.JFrame {
         new Registro().setVisible(true);
 
     }//GEN-LAST:event_jBRegistrarseActionPerformed
+
+    private void jPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            comprobarUsuario();
+        }
+    }//GEN-LAST:event_jPasswordKeyPressed
 
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(() -> {
