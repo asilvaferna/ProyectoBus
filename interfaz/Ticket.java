@@ -288,9 +288,8 @@ public class Ticket extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonConfirmarVIaje)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonCerrar))
                     .addComponent(jButtonRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -392,9 +391,25 @@ public class Ticket extends javax.swing.JFrame {
             impresora.guardarPDF();
             impresora.cerrarPDF();
             
+           
+            
             //Inserccion en base
             OperacionesBD sql= new OperacionesBD();
-//            sql.insertViaje(sql., bus);
+           
+            objetos.Buses bus = new objetos.Buses();
+            bus.setBusid(sql.getBusID(destinoR));
+            bus.setTrayecto(destinoR);
+            
+            objetos.Cliente cliente = new objetos.Cliente();
+            cliente.setNombre(nombreR);
+            cliente.setUserid(sql.getUserID(usuarioR));
+            cliente.setPass(sql.getUserPassword(cliente.getUserid()));
+            cliente.setUsername(usuarioR);
+            
+            sql.insertViaje(cliente, bus);
+            
+            
+            
             
 
         } catch (IOException e) {
