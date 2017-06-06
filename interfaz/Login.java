@@ -77,6 +77,7 @@ public class Login extends javax.swing.JFrame {
         jlAlerta = new javax.swing.JLabel();
         jPassword = new javax.swing.JPasswordField();
         jlAlert = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jlblTitulo = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jBEntrar = new javax.swing.JButton();
@@ -136,6 +137,15 @@ public class Login extends javax.swing.JFrame {
         jlAlert.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlAlert.setForeground(new java.awt.Color(212, 37, 57));
 
+        jLabel1.setFont(new java.awt.Font("MACGrande Medium", 2, 12)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("¿Olvidate la contraseña?");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelBackground2Layout = new javax.swing.GroupLayout(jPanelBackground2);
         jPanelBackground2.setLayout(jPanelBackground2Layout);
         jPanelBackground2Layout.setHorizontalGroup(
@@ -153,7 +163,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jTCorreoELectronico))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                        .addComponent(jlAlert, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+                            .addComponent(jlAlert, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jlAlerta, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -178,7 +190,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jlGuion)
                             .addComponent(jlAlerta, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)))
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jlAlert, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -273,6 +287,11 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jPasswordKeyPressed
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        new RememberPass().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(() -> {
             new Login().setVisible(true);
@@ -288,6 +307,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jBRegistrarse;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
