@@ -518,7 +518,9 @@ public class Ticketera extends javax.swing.JFrame {
 
         // Abrir ventana de Ticket
         for (int i = 0; i < getBilletes(); i++) {
-            Ticket ticket = new Ticket(consulta.getUserName(Login.userID),  consulta.getUserUsername(Login.userID), getClase(), getTipo(), getEdad(), getDestino(), totalUnitario, getTiempo());
+            Ticket ticket = new Ticket(
+                    consulta.getUserName(Login.userID),  
+                    consulta.getUserUsername(Login.userID), getClase(), getTipo(), getEdad(), getDestino(), totalUnitario, getTiempo());
             Viaje viaje = new Viaje(ticket.referencia, getClase(), getTipo(), getEdad(), getDestino());
             ticket.setVisible(true);
             base.add(viaje);
