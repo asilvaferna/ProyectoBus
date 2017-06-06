@@ -109,8 +109,6 @@ public class Ticketera extends javax.swing.JFrame {
         jRBEdad1 = new javax.swing.JRadioButton();
         jRBEdad2 = new javax.swing.JRadioButton();
         jRBEdad3 = new javax.swing.JRadioButton();
-        jlblNBilletes = new javax.swing.JLabel();
-        jComboBoxNBilletes = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jComboBoxDestinos = new javax.swing.JComboBox<>();
         jPanelOperations = new javax.swing.JPanel();
@@ -237,18 +235,6 @@ public class Ticketera extends javax.swing.JFrame {
             }
         });
 
-        jlblNBilletes.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jlblNBilletes.setLabelFor(jComboBoxNBilletes);
-        jlblNBilletes.setText("Numero de Billetes");
-
-        jComboBoxNBilletes.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jComboBoxNBilletes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
-        jComboBoxNBilletes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxNBilletesActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jLabel5.setLabelFor(jComboBoxDestinos);
         jLabel5.setText("Destino");
@@ -328,45 +314,32 @@ public class Ticketera extends javax.swing.JFrame {
         jPanelBackground2.setLayout(jPanelBackground2Layout);
         jPanelBackground2Layout.setHorizontalGroup(
             jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelBackground2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground2Layout.createSequentialGroup()
+                .addContainerGap(96, Short.MAX_VALUE)
+                .addComponent(jPanelOperations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground2Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground2Layout.createSequentialGroup()
-                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRBClase2)
-                                    .addComponent(jRBClase1)
-                                    .addComponent(jlblClase))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRBTipo1)
-                                    .addComponent(jlblTipo)
-                                    .addComponent(jRBTipo2))
-                                .addGap(84, 84, 84)
-                                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRBEdad2)
-                                    .addComponent(jRBEdad1)
-                                    .addComponent(jRBEdad3)
-                                    .addComponent(jlblEdad)))
-                            .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jComboBoxDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(1, 1, 1)))
-                        .addGap(79, 79, 79))
+                    .addComponent(jRBClase2)
+                    .addComponent(jRBClase1)
+                    .addComponent(jlblClase))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlblNBilletes)
-                            .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(jComboBoxNBilletes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelOperations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107))
+                            .addComponent(jRBTipo1)
+                            .addComponent(jlblTipo)
+                            .addComponent(jRBTipo2)
+                            .addComponent(jLabel5))
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRBEdad2)
+                            .addComponent(jRBEdad1)
+                            .addComponent(jRBEdad3)
+                            .addComponent(jlblEdad))))
+                .addGap(82, 82, 82))
         );
         jPanelBackground2Layout.setVerticalGroup(
             jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,19 +361,13 @@ public class Ticketera extends javax.swing.JFrame {
                     .addComponent(jRBEdad2))
                 .addGap(18, 18, 18)
                 .addComponent(jRBEdad3)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jComboBoxNBilletes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jlblNBilletes)
-                    .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBoxDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(jComboBoxDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jPanelOperations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                .addGap(18, 18, 18))
         );
 
         jlblTitulo.setFont(new java.awt.Font("Krungthep", 0, 36)); // NOI18N
@@ -573,10 +540,6 @@ public class Ticketera extends javax.swing.JFrame {
         totalizador();
     }//GEN-LAST:event_jRBEdad2ActionPerformed
 
-    private void jComboBoxNBilletesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxNBilletesActionPerformed
-        totalizador();
-    }//GEN-LAST:event_jComboBoxNBilletesActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -584,7 +547,6 @@ public class Ticketera extends javax.swing.JFrame {
     private javax.swing.JButton jButtonReset;
     private javax.swing.JButton jButtonTotal;
     private javax.swing.JComboBox<String> jComboBoxDestinos;
-    private javax.swing.JComboBox<String> jComboBoxNBilletes;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel5;
@@ -606,7 +568,6 @@ public class Ticketera extends javax.swing.JFrame {
     private javax.swing.JLabel jlblEdad;
     private javax.swing.JLabel jlblImpuestos;
     private javax.swing.JLabel jlblImpuestosR;
-    private javax.swing.JLabel jlblNBilletes;
     private javax.swing.JLabel jlblSubTotal;
     private javax.swing.JLabel jlblSubTotalR;
     private javax.swing.JLabel jlblTipo;
