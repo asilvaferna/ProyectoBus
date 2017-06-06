@@ -34,10 +34,12 @@ public class Login extends javax.swing.JFrame {
             String username = jTCorreoELectronico.getText();
             String userpass = new String(jPassword.getPassword());
             userID = consulta.getUserID(username);
+            String usernameB = consulta.getUserUsername(userID);
+            String userpassB = consulta.getUserPassword(userID);
 
             if (username.isEmpty()) {
                 jlAlert.setText("Usuario o contraseña incorrectos.");
-            } else if (consulta.getCredentials(username, userpass).equals(username + userpass)) {
+            } else if (username.equals(usernameB) && userpass.equals(userpassB)) {
                 new Ticketera().setVisible(true);
                 this.setVisible(false);
             } else {
