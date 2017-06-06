@@ -169,13 +169,6 @@
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTCorreoElectronico" min="-2" pref="258" max="-2" attributes="0"/>
-                                  <Component id="jlblCorreo" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -208,12 +201,21 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jPassword1" min="-2" pref="158" max="-2" attributes="0"/>
                                           <Component id="jlContraseña1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTtlf" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                                          <Component id="jlblTlf" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jlGuion" pref="0" max="32767" attributes="0"/>
                               <EmptySpace pref="24" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jlblCorreo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTCorreoElectronico" min="-2" pref="200" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -239,9 +241,17 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jlblCorreo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTCorreoElectronico" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlblCorreo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblTlf" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jTCorreoElectronico" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jTtlf" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jlGuion" min="-2" max="-2" attributes="0"/>
@@ -328,6 +338,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="jPassword1">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jlblTlf">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Krungthep" size="13" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Tlf"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTtlf">
             </Component>
           </SubComponents>
         </Container>

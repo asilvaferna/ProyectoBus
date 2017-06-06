@@ -23,10 +23,11 @@ public class Registro extends javax.swing.JFrame {
 
         int userid = Integer.parseInt(jTDNI.getText());
         String username = jTCorreoElectronico.getText();
-        String pass = jPassword.getText();
+        String pass = new String(jPassword.getPassword());
         String nombre = jTNombre.getText();
+        int telefono = Integer.parseInt(jTtlf.getText());
 
-        return new Cliente(userid, username, pass, nombre);
+        return new Cliente(userid, username, pass, nombre, telefono);
 
     }
 
@@ -81,6 +82,8 @@ public class Registro extends javax.swing.JFrame {
         jPassword = new javax.swing.JPasswordField();
         jlContraseña1 = new javax.swing.JLabel();
         jPassword1 = new javax.swing.JPasswordField();
+        jlblTlf = new javax.swing.JLabel();
+        jTtlf = new javax.swing.JTextField();
         jlblTitulo = new javax.swing.JLabel();
         jBConfirmar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -146,6 +149,9 @@ public class Registro extends javax.swing.JFrame {
         jlContraseña1.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jlContraseña1.setText("Repite la Contraseña");
 
+        jlblTlf.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
+        jlblTlf.setText("Tlf");
+
         javax.swing.GroupLayout jPanelBackground2Layout = new javax.swing.GroupLayout(jPanelBackground2);
         jPanelBackground2.setLayout(jPanelBackground2Layout);
         jPanelBackground2Layout.setHorizontalGroup(
@@ -153,11 +159,6 @@ public class Registro extends javax.swing.JFrame {
             .addGroup(jPanelBackground2Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelBackground2Layout.createSequentialGroup()
-                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlblCorreo))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelBackground2Layout.createSequentialGroup()
@@ -183,10 +184,17 @@ public class Registro extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jPassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlContraseña1))))
+                                    .addComponent(jlContraseña1)
+                                    .addComponent(jTtlf, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jlblTlf))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jlGuion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap(24, Short.MAX_VALUE))))
+                        .addContainerGap(24, Short.MAX_VALUE))
+                    .addGroup(jPanelBackground2Layout.createSequentialGroup()
+                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblCorreo)
+                            .addComponent(jTCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanelBackground2Layout.setVerticalGroup(
             jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,9 +212,14 @@ public class Registro extends javax.swing.JFrame {
                             .addComponent(jTDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTLetraDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(jlblCorreo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelBackground2Layout.createSequentialGroup()
+                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlblCorreo)
+                            .addComponent(jlblTlf))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTtlf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlGuion)
@@ -312,7 +325,7 @@ public class Registro extends javax.swing.JFrame {
     private void jBConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConfirmarActionPerformed
 
         try {
-           if (jPassword.getText().equalsIgnoreCase(jPassword1.getText())==false) {
+           if (!new String(jPassword.getPassword()).equals(new String(jPassword.getPassword()))) {
                 jlAlerta.setText("Las contraseñas deben ser iguales.");
             } else {
             OperacionesBD operaciones = new OperacionesBD();
@@ -364,6 +377,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JTextField jTDNI;
     private javax.swing.JTextField jTLetraDNI;
     private javax.swing.JTextField jTNombre;
+    private javax.swing.JTextField jTtlf;
     private javax.swing.JLabel jlAlerta;
     private javax.swing.JLabel jlContraseña;
     private javax.swing.JLabel jlContraseña1;
@@ -372,5 +386,6 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jlblDNI;
     private javax.swing.JLabel jlblNombre1;
     private javax.swing.JLabel jlblTitulo;
+    private javax.swing.JLabel jlblTlf;
     // End of variables declaration//GEN-END:variables
 }
