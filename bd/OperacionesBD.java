@@ -19,7 +19,7 @@ import objetos.Cliente;
  */
 public class OperacionesBD {
 
-    private String url = "jdbc:postgresql://localhost:5432/VigoBus";
+    private String url ="jdbc:postgresql://localhost:5432/VigoBus";
     private String user = "postgres";
     private String pwd = "postgres";
     private Connection c;
@@ -116,7 +116,7 @@ public class OperacionesBD {
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                name = rs.getString("name");
+                name = rs.getString("nombre");
             }
             return name;
 
@@ -144,6 +144,24 @@ public class OperacionesBD {
         }
 
     }
+                public boolean checkUser (String username) {
+        String sql = "SELECT userid FROM Usuario where username = " +"'"+ username +"'"+ ";";
+          int userid = 0;
+        try {
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                userid = rs.getInt("userid");
+            }
+            return true;
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return false;
+        }
+
+    }
+        
 
     public void insertViaje(Cliente cliente, objetos.Buses bus) {
         try {
