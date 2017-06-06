@@ -27,9 +27,6 @@ public class Ticketera extends javax.swing.JFrame {
     public Ticketera() {
         initComponents();
 
-        //Componentes obsoletos
-        jComboBoxNBilletes.setVisible(false);
-        jlblNBilletes.setVisible(false);
     }
 
     public String getDestino() {
@@ -501,7 +498,7 @@ public class Ticketera extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonTotalActionPerformed
 
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
-        jComboBoxNBilletes.setSelectedItem("1");
+
         jComboBoxDestinos.setSelectedItem("Pontevedra");
         jlblSubTotalR.setText("0");
         jlblImpuestosR.setText("0");
