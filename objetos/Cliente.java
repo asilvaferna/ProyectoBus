@@ -14,15 +14,17 @@ public class Cliente {
     private String username;
     private String pass;
     private String nombre;
+    private int telefono;
 
     public Cliente() {
     }
     
-    public Cliente(int userid, String username, String pass, String nombre) {
+    public Cliente(int userid, String username, String pass, String nombre, int telefono) {
         this.userid = userid;
         this.username = username;
         this.pass = pass;
         this.nombre = nombre;
+        this.telefono = telefono;
     }
     
 
@@ -57,6 +59,14 @@ public class Cliente {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 
 
