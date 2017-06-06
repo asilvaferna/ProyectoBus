@@ -13,7 +13,7 @@ import bd.OperacionesBD;
  */
 public class Login extends javax.swing.JFrame {
 
-    static int userID;
+    public static int userID;
 
     public Login(int userID) {
         this.userID = userID;

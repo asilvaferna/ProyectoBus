@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import objetos.Cliente;
 
 /**
@@ -29,7 +31,6 @@ public class OperacionesBD {
         c = connect();
     }
 
-    
     // Conexion a la base de datos
     public Connection connect() {
         try {
@@ -46,16 +47,16 @@ public class OperacionesBD {
 
     }
 
-    
     // Insertar un usuario dado un objeto cliente por parametro
     public boolean insertUser(Cliente cliente) {
         try {
-            String sql = "INSERT INTO Usuario VALUES(?,?,?,?)";
+            String sql = "INSERT INTO Usuario VALUES(?,?,?,?,?)";
             PreparedStatement pstmt = c.prepareStatement(sql);
             pstmt.setInt(1, cliente.getUserid());
             pstmt.setString(2, cliente.getUsername());
             pstmt.setString(3, cliente.getPass());
             pstmt.setString(4, cliente.getNombre());
+            pstmt.setInt(5, cliente.getTelefono());
             pstmt.executeUpdate();
 
             return true;
@@ -66,7 +67,6 @@ public class OperacionesBD {
         }
     }
 
-    
     // Insertar un bus dado un objeto bus por parametro
     public void insertBus(objetos.Buses bus) {
         try {
@@ -82,7 +82,6 @@ public class OperacionesBD {
         }
     }
 
-    
     //Obtener la contraseña dado un id de usuario
     public String getUserPassword(int userid) {
         String sql = "SELECT pass FROM Usuario where userid =" + userid + ";";
@@ -101,7 +100,6 @@ public class OperacionesBD {
 
     }
 
-    
     // Obtener el username dado un id de usuario
     public String getUserUsername(int userid) {
         String sql = "SELECT username FROM Usuario where userid = " + userid + ";";
@@ -120,7 +118,6 @@ public class OperacionesBD {
 
     }
 
-    
     // Obtener el nombre del usuario dado su id 
     public String getUserName(int userid) {
         String sql = "SELECT nombre FROM Usuario where userid =" + userid + " ;";
@@ -139,7 +136,6 @@ public class OperacionesBD {
 
     }
 
-    
     // Obtener el id del usuario dado su username
     public int getUserID(String username) {
         String sql = "SELECT userid FROM Usuario where username ='" + username + "';";
@@ -159,7 +155,6 @@ public class OperacionesBD {
 
     }
 
-    
     // Insertar una fila en la tabla viaje dado un cliente y un bus
     public void insertViaje(Cliente cliente, objetos.Buses bus) {
         try {
@@ -175,7 +170,6 @@ public class OperacionesBD {
         }
     }
 
-    
     // Comprobar los credenciales
     public String getCredentials(String username, String pass) {
         try {
@@ -192,7 +186,6 @@ public class OperacionesBD {
 
     }
 
-    
     // Obtener el id del bus dada una ruta
     public int getBusID(String ruta) {
         String sql = "SELECT busid FROM Bus where trayecto ='" + ruta + "';";
@@ -209,6 +202,22 @@ public class OperacionesBD {
             return 0;
         }
 
+    }
+
+    public int getTelefono(int userid) {
+        String sql = "SELECT telefono FROM Usuario where userid='" + userid + "';";
+        int telefono = 0;
+        try {
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                telefono = rs.getInt("telefono");
+            }
+            return telefono;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return 0;
+        }
     }
 
 }
