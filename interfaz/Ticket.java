@@ -375,8 +375,8 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto(origen, 250, 400, 16, "normal");
             impresora.imprimeTexto(ticket, 50, 300, 16, "normal");
             impresora.imprimeTexto(destino, 250, 300, 16, "normal");
-            impresora.imprimeTexto(precio, 50, 100, 16, "normal");
-            impresora.imprimeTexto(hora, 250, 100, 16, "normal");
+            impresora.imprimeTexto(precio, 50, 200, 16, "normal");
+            impresora.imprimeTexto(hora, 250, 200, 16, "normal");
             // Cuerpo: resultados
             impresora.imprimeTexto(nombreR, 50, 550, 13, "normal");
             impresora.imprimeTexto(usuarioR, 250, 550, 13, "normal");

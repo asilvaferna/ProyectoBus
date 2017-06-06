@@ -132,15 +132,10 @@
                           <Component id="jlblOrigen" min="-2" max="-2" attributes="0"/>
                           <Component id="jlblDestinoR" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jlblOrigenR" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jlblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlblTipoR" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="44" pref="44" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jlblTipo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlblTipoR" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jlblEdad" min="-2" max="-2" attributes="0"/>
                           <Component id="jlblEdadR" min="-2" max="-2" attributes="0"/>
