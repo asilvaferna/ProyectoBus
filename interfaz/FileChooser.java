@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  * @author Pablo
  */
 public class FileChooser extends javax.swing.JFrame {
-
+    PrintPDF guardar;
     /**
      * Creates new form FileChooser
      */
@@ -119,14 +119,22 @@ public class FileChooser extends javax.swing.JFrame {
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
                                     
-        File directorio = jFileChooser.getSelectedFile();
-        PrintPDF.ruta = directorio.getAbsolutePath();
-        this.setVisible(false);
-            
-
-       
+        try {
+            File directorio = jFileChooser.getSelectedFile();
+            PrintPDF.ruta = directorio.getAbsolutePath();
+            guardar.guardarPDF();
+            guardar.cerrarPDF();
+            this.setVisible(false);
+                    System.out.println("Fichero creado en: " + PrintPDF.ruta);
+        } catch (IOException ex) {
+            System.out.println("error");
+        }
+           
     }//GEN-LAST:event_jBGuardarMouseClicked
 
+    public void confirmacion(PrintPDF parametros){
+        this.guardar = parametros;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

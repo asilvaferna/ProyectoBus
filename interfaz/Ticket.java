@@ -80,7 +80,6 @@ public class Ticket extends javax.swing.JFrame {
         jlblUsuario = new javax.swing.JLabel();
         jlblUsuarioR = new javax.swing.JLabel();
         jButtonConfirmarVIaje = new javax.swing.JButton();
-        jButtonRuta = new javax.swing.JButton();
         jButtonCerrar = new javax.swing.JButton();
 
         jlblTipo3.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
@@ -257,24 +256,11 @@ public class Ticket extends javax.swing.JFrame {
             }
         });
 
-        jButtonRuta.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonRuta.setText("Cambiar directorio de almacenaje");
-        jButtonRuta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonRutaMouseClicked(evt);
-            }
-        });
-
         jButtonCerrar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
         jButtonCerrar.setText("SALIR");
         jButtonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonCerrarMouseClicked(evt);
-            }
-        });
-        jButtonCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCerrarActionPerformed(evt);
             }
         });
 
@@ -291,8 +277,7 @@ public class Ticket extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonConfirmarVIaje)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonCerrar))
-                    .addComponent(jButtonRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButtonCerrar)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -301,9 +286,7 @@ public class Ticket extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCerrar)
                     .addComponent(jButtonConfirmarVIaje))
@@ -324,16 +307,19 @@ public class Ticket extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCerrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonCerrarActionPerformed
-
     private void jButtonCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarMouseClicked
         setVisible(false);
     }//GEN-LAST:event_jButtonCerrarMouseClicked
-
+FileChooser visualizar = new FileChooser();
     private void jButtonConfirmarVIajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmarVIajeMouseClicked
+           visualizar.setVisible(true);
+           this.impresion();
 
+    }//GEN-LAST:event_jButtonConfirmarVIajeMouseClicked
+
+    //NUEVO METODO
+    public void impresion(){
+        
         String nombre = jlblNombre.getText();
         String nombreR = jlblNombreR.getText();
         String usuario = jlblUsuario.getText();
@@ -358,6 +344,7 @@ public class Ticket extends javax.swing.JFrame {
         String horaR = jlblHoraFechaR.getText();
 
         try {
+                    
             impresora = new PrintPDF();
             impresora.setNombreArchivo(referencia);
             // Cabecera
@@ -389,9 +376,9 @@ public class Ticket extends javax.swing.JFrame {
             impresora.imprimeTexto(horaR, 250, 150, 13, "normal");
             // Cerramos el stream
             impresora.cerrarContenido();
-            impresora.guardarPDF();
-            impresora.cerrarPDF();
+
             
+            visualizar.confirmacion(impresora);
             //Inserccion en base
             OperacionesBD sql= new OperacionesBD();
 //            sql.insertViaje(sql., bus);
@@ -402,19 +389,13 @@ public class Ticket extends javax.swing.JFrame {
             System.out.println(e.getMessage());
 
         }
-        System.out.println("Fichero creado en: " + PrintPDF.ruta);
+
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonConfirmarVIajeMouseClicked
-
-    private void jButtonRutaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRutaMouseClicked
-        new FileChooser().setVisible(true);
-    }//GEN-LAST:event_jButtonRutaMouseClicked
-
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCerrar;
     private javax.swing.JButton jButtonConfirmarVIaje;
-    private javax.swing.JButton jButtonRuta;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
