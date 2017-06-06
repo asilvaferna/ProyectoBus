@@ -33,6 +33,7 @@ public class Login extends javax.swing.JFrame {
         try {
             String username = jTCorreoELectronico.getText();
             String userpass = new String(jPassword.getPassword());
+            userID = consulta.getUserID(username);
 
             if (username.isEmpty()) {
                 jlAlert.setText("Usuario o contraseña incorrectos.");

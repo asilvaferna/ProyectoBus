@@ -275,14 +275,8 @@ public class Ticket extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButtonConfirmarVIaje)
-<<<<<<< HEAD
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonCerrar)))
-=======
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonCerrar))
-                    .addComponent(jButtonRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> Adri
+                        .addComponent(jButtonCerrar)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -315,16 +309,16 @@ public class Ticket extends javax.swing.JFrame {
     private void jButtonCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCerrarMouseClicked
         setVisible(false);
     }//GEN-LAST:event_jButtonCerrarMouseClicked
-FileChooser visualizar = new FileChooser();
+        FileChooser visualizar = new FileChooser();
     private void jButtonConfirmarVIajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmarVIajeMouseClicked
-           visualizar.setVisible(true);
-           this.impresion();
+        visualizar.setVisible(true);
+        this.impresion();
 
     }//GEN-LAST:event_jButtonConfirmarVIajeMouseClicked
 
     //NUEVO METODO
-    public void impresion(){
-        
+    public void impresion() {
+
         String nombre = jlblNombre.getText();
         String nombreR = jlblNombreR.getText();
         String usuario = jlblUsuario.getText();
@@ -349,7 +343,7 @@ FileChooser visualizar = new FileChooser();
         String horaR = jlblHoraFechaR.getText();
 
         try {
-                    
+
             impresora = new PrintPDF();
             impresora.setNombreArchivo(referencia);
             // Cabecera
@@ -382,27 +376,22 @@ FileChooser visualizar = new FileChooser();
             // Cerramos el stream
             impresora.cerrarContenido();
 
-            
             visualizar.confirmacion(impresora);
 
             //Inserccion en base
-            OperacionesBD sql= new OperacionesBD();
-           
+            OperacionesBD sql = new OperacionesBD();
+
             objetos.Buses bus = new objetos.Buses();
             bus.setBusid(sql.getBusID(destinoR));
             bus.setTrayecto(destinoR);
-            
+
             objetos.Cliente cliente = new objetos.Cliente();
             cliente.setNombre(nombreR);
             cliente.setUserid(sql.getUserID(usuarioR));
             cliente.setPass(sql.getUserPassword(cliente.getUserid()));
             cliente.setUsername(usuarioR);
-            
+
             sql.insertViaje(cliente, bus);
-            
-            
-            
-            
 
         } catch (IOException e) {
 
