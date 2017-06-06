@@ -20,12 +20,12 @@ public class Registro extends javax.swing.JFrame {
     }
 
     public Cliente usuarioNuevo() {
-        
+
         int userid = Integer.parseInt(jTDNI.getText());
-        String username = jTCorreoELectronico.getText();
+        String username = jTCorreoElectronico.getText();
         String pass = jPassword.getText();
         String nombre = jTNombre.getText();
-        
+
         return new Cliente(userid, username, pass, nombre);
 
     }
@@ -74,7 +74,7 @@ public class Registro extends javax.swing.JFrame {
         jlblDNI = new javax.swing.JLabel();
         jTNombre = new javax.swing.JTextField();
         jTDNI = new javax.swing.JTextField();
-        jTCorreoELectronico = new javax.swing.JTextField();
+        jTCorreoElectronico = new javax.swing.JTextField();
         jTLetraDNI = new javax.swing.JTextField();
         jlblNombre1 = new javax.swing.JLabel();
         jlContraseña = new javax.swing.JLabel();
@@ -164,7 +164,7 @@ public class Registro extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTCorreoELectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlblCorreo))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanelBackground2Layout.createSequentialGroup()
@@ -198,7 +198,7 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jlblCorreo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTCorreoELectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTCorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -297,16 +297,23 @@ public class Registro extends javax.swing.JFrame {
 
     private void jBConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConfirmarActionPerformed
 
-        try{
-        OperacionesBD operaciones = new OperacionesBD();
-        operaciones.insertUser(usuarioNuevo());
+        try {
+
+            OperacionesBD operaciones = new OperacionesBD();
+                        boolean confirmacion=operaciones.insertUser(usuarioNuevo());
+            if (confirmacion==false) {
+
+                jlAlerta.setText("Usuario existente.");
+
+            } else {
+
                 this.setVisible(false);
-                        new Login().setVisible(true);
-        }catch(Exception ex){
-              jlAlerta.setText("Todos los campos deben ser rellenados.");
+                new Login().setVisible(true);
+            }
+        } catch (Exception ex) {
+            jlAlerta.setText("Todos los campos deben ser rellenados.");
         }
-        
-        
+
 
     }//GEN-LAST:event_jBConfirmarActionPerformed
 
@@ -334,7 +341,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelBackground2;
     private javax.swing.JPasswordField jPassword;
     private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JTextField jTCorreoELectronico;
+    private javax.swing.JTextField jTCorreoElectronico;
     private javax.swing.JTextField jTDNI;
     private javax.swing.JTextField jTLetraDNI;
     private javax.swing.JTextField jTNombre;

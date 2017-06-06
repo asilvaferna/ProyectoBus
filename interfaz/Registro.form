@@ -184,7 +184,7 @@
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTCorreoELectronico" min="-2" pref="258" max="-2" attributes="0"/>
+                                  <Component id="jTCorreoElectronico" min="-2" pref="258" max="-2" attributes="0"/>
                                   <Component id="jlblCorreo" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -231,7 +231,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jlblCorreo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTCorreoELectronico" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTCorreoElectronico" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -281,7 +281,7 @@
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTDNIKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTCorreoELectronico">
+            <Component class="javax.swing.JTextField" name="jTCorreoElectronico">
             </Component>
             <Component class="javax.swing.JTextField" name="jTLetraDNI">
               <Properties>
