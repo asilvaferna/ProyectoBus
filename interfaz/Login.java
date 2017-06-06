@@ -62,11 +62,11 @@ public class Login extends javax.swing.JFrame {
             jlAlert.setText("Usuario o contraseña incorrectos.");
             
           //CONDICIÓN PARA PRUEBAS
-            if (jPassword.getText().equalsIgnoreCase("root") && jTCorreoELectronico.getText().equalsIgnoreCase("root")) {
-
-                new Ticketera().setVisible(true);
-                this.setVisible(false);
-            }
+//            if (jPassword.getText().equalsIgnoreCase("root") && jTCorreoELectronico.getText().equalsIgnoreCase("root")) {
+//
+//                new Ticketera().setVisible(true);
+//                this.setVisible(false);
+//            }
 
         }
     }
