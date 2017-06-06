@@ -152,8 +152,8 @@ public class OperacionesBD {
             System.out.println("Error al insertar");
         }
     }
-    
-        public String getCredentials(String username, String pass) {
+
+    public String getCredentials(String username, String pass) {
         try {
             PreparedStatement s;
             s = c.prepareStatement("SELECT username, pass FROM Usuario where username=? AND pass=?;");
@@ -164,6 +164,23 @@ public class OperacionesBD {
         } catch (SQLException ex) {
             System.out.println("Credenciales incorrectos");
             return null;
+        }
+
+    }
+
+    public int getBusID(String ruta) {
+        String sql = "SELECT busid FROM Bus where trayecto ='" + ruta + "';";
+        int busid = 0;
+        try {
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                busid = rs.getInt("busid");
+            }
+            return busid;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return 0;
         }
 
     }
