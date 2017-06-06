@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package sendInformation;
 
 import java.io.IOException;
@@ -21,53 +20,42 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
 /**
- * 
+ *
  * @author Pablo
  */
 public class SMS {
-        public static int telefono;
-        public static String password;
-                
-    public static  void runner() {
 
-//Se fija el tiempo máximo de espera para conectar con el servidor (5000)
-//Se fija el tiempo máximo de espera de la respuesta del servidor (60000)
-        RequestConfig config = RequestConfig.custom()
-                .setConnectTimeout(5000)
-                .setSocketTimeout(60000)
-                .build();
+    public static int telefono;
+    public static String password;
 
-//Se inicia el objeto HTTP
+    public static void envioSMS() {
+
+        // Se fija el tiempo máximo de espera para conectar con el servidor (4000)
+        // Se fija el tiempo máximo de espera de la respuesta del servidor (50000)
+        RequestConfig config = RequestConfig.custom().setConnectTimeout(4000).setSocketTimeout(50000).build();
+
+        // Se inicia el objeto HTTP
         HttpClientBuilder builder = HttpClientBuilder.create();
         builder.setDefaultRequestConfig(config);
         CloseableHttpClient httpClient = builder.build();
-        
 
-//Se fija la URL sobre la que enviar la petición POST
-//Como ejemplo la petición se envía a www.altiria.net/sustituirPOSTsms
-//Se debe reemplazar la cadena '/sustituirPOSTsms' por la parte correspondiente
-//de la URL suministrada por Altiria al dar de alta el servicio o pedir cuenta
-// de prueba
+        // URL post sobre la que se va a ejecutar la petición
         HttpPost post = new HttpPost("http://www.altiria.net/api/http");
 
-//Se crea la lista de parámetros a enviar en la petición POST
+        // Lista de parámetros a enviar en la petición POST
         List<NameValuePair> parametersList = new ArrayList<NameValuePair>();
-//XX, YY y ZZ se corresponden con los valores de identificación del
-//usuario en el sistema, proporcionados por Altiria al dar de alta el servicio
-//o pedir cuenta de prueba
+        
+        // identificacion en el sistema Altiria
         parametersList.add(new BasicNameValuePair("cmd", "sendsms"));
         parametersList.add(new BasicNameValuePair("domainId", "demopr"));
         parametersList.add(new BasicNameValuePair("login", "pdelatorree"));
         parametersList.add(new BasicNameValuePair("passwd", "fhcsphdq"));
-        parametersList.add(new BasicNameValuePair("dest", "34"+telefono));//
-        
-        parametersList.add(new BasicNameValuePair("msg", "BUS-VIGO LA CONTRASEÑA DE SU CUENTA ES: "+password));
-//Remitente autorizado por Altiria al dar de alta el servicio. No disponible
-//en todos los países. Omitir el parametro si no se cuenta con ninguno.
-        //parametersList.add(new BasicNameValuePair("senderId", "pdelatorree"));
+        parametersList.add(new BasicNameValuePair("dest", "34" + telefono));//
+
+        parametersList.add(new BasicNameValuePair("msg", "BUS-VIGO LA CONTRASEÑA DE SU CUENTA ES: " + password));
 
         try {
-            //Se fija la codificacion de caracteres de la peticion POST
+            // Codificacion de caracteres de la peticion POST
             post.setEntity(new UrlEncodedFormEntity(parametersList, "UTF-8"));
         } catch (UnsupportedEncodingException uex) {
             System.out.println("ERROR: codificación de caracteres no soportada");
@@ -88,14 +76,12 @@ public class SMS {
                 System.out.println("Compruebe que ha configurado correctamente la direccion/url ");
                 System.out.println("suministrada por Altiria");
                 return;
+            } else //Se procesa la respuesta capturada en la cadena 'response'
+            if (resp.startsWith("ERROR")) {
+                System.out.println(resp);
+                System.out.println("Código de error de Altiria. Compruebe las especificaciones");
             } else {
-                //Se procesa la respuesta capturada en la cadena 'response'
-                if (resp.startsWith("ERROR")) {
-                    System.out.println(resp);
-                    System.out.println("Código de error de Altiria. Compruebe las especificaciones");
-                } else {
-                    System.out.println(resp);
-                }
+                System.out.println(resp);
             }
         } catch (Exception e) {
             System.out.println("Excepción");
