@@ -26,10 +26,6 @@ public class Ticketera extends javax.swing.JFrame {
      */
     public Ticketera() {
         initComponents();
-
-        //Componentes obsoletos
-        jComboBoxNBilletes.setVisible(false);
-        jlblNBilletes.setVisible(false);
     }
 
     public String getDestino() {
@@ -314,32 +310,33 @@ public class Ticketera extends javax.swing.JFrame {
         jPanelBackground2.setLayout(jPanelBackground2Layout);
         jPanelBackground2Layout.setHorizontalGroup(
             jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground2Layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
-                .addComponent(jPanelOperations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground2Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+            .addGroup(jPanelBackground2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRBClase2)
-                    .addComponent(jRBClase1)
-                    .addComponent(jlblClase))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelBackground2Layout.createSequentialGroup()
+                        .addComponent(jComboBoxDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelBackground2Layout.createSequentialGroup()
+                        .addComponent(jPanelOperations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(jPanelBackground2Layout.createSequentialGroup()
+                        .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRBClase2)
+                            .addComponent(jRBClase1)
+                            .addComponent(jlblClase)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRBTipo1)
                             .addComponent(jlblTipo)
-                            .addComponent(jRBTipo2)
-                            .addComponent(jLabel5))
-                        .addGap(57, 57, 57)
+                            .addComponent(jRBTipo2))
+                        .addGap(28, 28, 28)
                         .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRBEdad2)
                             .addComponent(jRBEdad1)
                             .addComponent(jRBEdad3)
-                            .addComponent(jlblEdad))))
-                .addGap(82, 82, 82))
+                            .addComponent(jlblEdad))
+                        .addGap(43, 43, 43))))
         );
         jPanelBackground2Layout.setVerticalGroup(
             jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,14 +357,14 @@ public class Ticketera extends javax.swing.JFrame {
                     .addComponent(jRBTipo2)
                     .addComponent(jRBEdad2))
                 .addGap(18, 18, 18)
-                .addComponent(jRBEdad3)
-                .addGap(17, 17, 17)
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
+                .addGroup(jPanelBackground2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRBEdad3)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBoxDestinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jPanelOperations, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addGap(24, 24, 24))
         );
 
         jlblTitulo.setFont(new java.awt.Font("Krungthep", 0, 36)); // NOI18N
@@ -400,22 +397,23 @@ public class Ticketera extends javax.swing.JFrame {
         jPanelBackground1.setLayout(jPanelBackground1Layout);
         jPanelBackground1Layout.setHorizontalGroup(
             jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground1Layout.createSequentialGroup()
+                .addGap(0, 19, Short.MAX_VALUE)
+                .addComponent(jPanelBackground2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
             .addGroup(jPanelBackground1Layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelBackground1Layout.createSequentialGroup()
-                        .addComponent(jButtonTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(114, 114, 114)
+                        .addComponent(jButtonTotal)
+                        .addGap(18, 18, 18)
                         .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelBackground1Layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
                         .addComponent(jLabel9)
                         .addGap(32, 32, 32)
                         .addComponent(jlblTitulo)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBackground1Layout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
-                .addComponent(jPanelBackground2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
         );
         jPanelBackground1Layout.setVerticalGroup(
             jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,10 +427,10 @@ public class Ticketera extends javax.swing.JFrame {
                         .addComponent(jlblTitulo)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanelBackground2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonTotal)
-                    .addComponent(jButtonReset))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelBackground1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonReset)
+                    .addComponent(jButtonTotal))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -501,7 +499,7 @@ public class Ticketera extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonTotalActionPerformed
 
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
-        jComboBoxNBilletes.setSelectedItem("1");
+
         jComboBoxDestinos.setSelectedItem("Pontevedra");
         jlblSubTotalR.setText("0");
         jlblImpuestosR.setText("0");
