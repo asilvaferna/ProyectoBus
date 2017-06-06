@@ -5,18 +5,23 @@
  */
 package interfaz;
 
+import bd.OperacionesBD;
 import impresora.PrintPDF;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.mail.MessagingException;
+import sendInformation.Correo;
 
 /**
  *
  * @author Pablo
  */
 public class FileChooser extends javax.swing.JFrame {
+
     PrintPDF guardar;
+
     /**
      * Creates new form FileChooser
      */
@@ -118,21 +123,33 @@ public class FileChooser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBGuardarMouseClicked
-                                    
+
         try {
             File directorio = jFileChooser.getSelectedFile();
             PrintPDF.ruta = directorio.getAbsolutePath();
             guardar.guardarPDF();
             guardar.cerrarPDF();
             this.setVisible(false);
-                    System.out.println("Fichero creado en: " + PrintPDF.ruta);
+            System.out.println("Fichero creado en: " + PrintPDF.ruta);
+
+            //Send mail
+            OperacionesBD consulta = new OperacionesBD();
+            Correo.contenido = "La compra se ha realizado con éxito.\n\nGracias por confiar en nosotros.\n";
+            Correo.correo = consulta.getUserUsername(Login.userID);
+            Correo.ruta = PrintPDF.ruta +"/"+ guardar.getNombreArchivo();
+            Correo.sendEmail();
+
+            System.out.println("Correo enviado al usuario");
+
         } catch (IOException ex) {
             System.out.println("error");
+        } catch (MessagingException ex) {
+            Logger.getLogger(FileChooser.class.getName()).log(Level.SEVERE, null, ex);
         }
-           
+
     }//GEN-LAST:event_jBGuardarMouseClicked
 
-    public void confirmacion(PrintPDF parametros){
+    public void confirmacion(PrintPDF parametros) {
         this.guardar = parametros;
     }
 
