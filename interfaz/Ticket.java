@@ -250,7 +250,7 @@ public class Ticket extends javax.swing.JFrame {
         );
 
         jButtonConfirmarVIaje.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonConfirmarVIaje.setText("CREAR");
+        jButtonConfirmarVIaje.setText("Imprimir");
         jButtonConfirmarVIaje.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonConfirmarVIajeMouseClicked(evt);
@@ -266,7 +266,7 @@ public class Ticket extends javax.swing.JFrame {
         });
 
         jButtonCerrar.setFont(new java.awt.Font("Krungthep", 0, 13)); // NOI18N
-        jButtonCerrar.setText("SALIR");
+        jButtonCerrar.setText("Salir");
         jButtonCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonCerrarMouseClicked(evt);

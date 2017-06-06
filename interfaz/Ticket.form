@@ -396,7 +396,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Krungthep" size="13" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="CREAR"/>
+            <Property name="text" type="java.lang.String" value="Imprimir"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonConfirmarVIajeMouseClicked"/>
@@ -418,7 +418,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Krungthep" size="13" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="SALIR"/>
+            <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonCerrarMouseClicked"/>
