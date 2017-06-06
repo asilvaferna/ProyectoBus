@@ -170,21 +170,6 @@ public class OperacionesBD {
         }
     }
 
-    // Comprobar los credenciales
-    public String getCredentials(String username, String pass) {
-        try {
-            PreparedStatement s;
-            s = c.prepareStatement("SELECT username, pass FROM Usuario where username=? AND pass=?;");
-            s.setString(1, username);
-            s.setString(2, pass);
-            s.execute();
-            return username + pass;
-        } catch (SQLException ex) {
-            System.out.println("Credenciales incorrectos");
-            return null;
-        }
-
-    }
 
     // Obtener el id del bus dada una ruta
     public int getBusID(String ruta) {
