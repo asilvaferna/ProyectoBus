@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import objetos.Cliente;
+import objetos.Usuario;
 
 /**
  *
@@ -48,7 +48,7 @@ public class OperacionesBD {
     }
 
     // Insertar un usuario dado un objeto cliente por parametro
-    public boolean insertUser(Cliente cliente) {
+    public boolean insertUser(Usuario cliente) {
         try {
             String sql = "INSERT INTO Usuario VALUES(?,?,?,?,?)";
             PreparedStatement pstmt = c.prepareStatement(sql);
@@ -156,7 +156,7 @@ public class OperacionesBD {
     }
 
     // Insertar una fila en la tabla viaje dado un cliente y un bus
-    public void insertViaje(Cliente cliente, objetos.Buses bus) {
+    public void insertViaje(Usuario cliente, objetos.Buses bus) {
         try {
             String sql = "INSERT INTO Viajes VALUES(?,?)";
             PreparedStatement pstmt = c.prepareStatement(sql);

@@ -1,74 +1,21 @@
 /*
- * Objeto cliente
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-
 package objetos;
 
 /**
- * 
- * @author Pablo
+ *
+ * @author adri
  */
-public class Cliente {
-   
-    private int userid;
-    private String username;
-    private String pass;
-    private String nombre;
-    private int telefono;
+public class Cliente extends Usuario {
 
     public Cliente() {
     }
-    
+
     public Cliente(int userid, String username, String pass, String nombre, int telefono) {
-        this.userid = userid;
-        this.username = username;
-        this.pass = pass;
-        this.nombre = nombre;
-        this.telefono = telefono;
+        super(userid, username, pass, nombre, telefono);
     }
-    
-
-
-    public int getUserid() {
-        return userid;
-    }
-
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-
     
 }

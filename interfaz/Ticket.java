@@ -385,7 +385,7 @@ public class Ticket extends javax.swing.JFrame {
             bus.setBusid(sql.getBusID(destinoR));
             bus.setTrayecto(destinoR);
 
-            objetos.Cliente cliente = new objetos.Cliente();
+            objetos.Usuario cliente = new objetos.Usuario();
             cliente.setNombre(nombreR);
             cliente.setUserid(sql.getUserID(usuarioR));
             cliente.setPass(sql.getUserPassword(cliente.getUserid()));

@@ -6,7 +6,7 @@
 package interfaz;
 
 import bd.OperacionesBD;
-import objetos.Cliente;
+import objetos.Usuario;
 
 /**
  * @authorr Pablo
@@ -19,7 +19,7 @@ public class Registro extends javax.swing.JFrame {
 
     }
 
-    public Cliente usuarioNuevo() {
+    public Usuario usuarioNuevo() {
 
         int userid = Integer.parseInt(jTDNI.getText());
         String username = jTCorreoElectronico.getText();
@@ -27,7 +27,7 @@ public class Registro extends javax.swing.JFrame {
         String nombre = jTNombre.getText();
         int telefono = Integer.parseInt(jTtlf.getText());
 
-        return new Cliente(userid, username, pass, nombre, telefono);
+        return new Usuario(userid, username, pass, nombre, telefono);
 
     }
 

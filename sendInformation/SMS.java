@@ -73,8 +73,6 @@ public class SMS {
             //Error en la respuesta del servidor
             if (response.getStatusLine().getStatusCode() != 200) {
                 System.out.println("ERROR: Código de error HTTP: " + response.getStatusLine().getStatusCode());
-                System.out.println("Compruebe que ha configurado correctamente la direccion/url ");
-                System.out.println("suministrada por Altiria");
                 return;
             } else //Se procesa la respuesta capturada en la cadena 'response'
             if (resp.startsWith("ERROR")) {
